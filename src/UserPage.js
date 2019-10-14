@@ -10,9 +10,9 @@ const UserPage = ({dummyIdeas}) => {
             </li>
         </Link>
     ))
-
-    const claimedList = dummyIdeas.filter(dummyIdeas => dummyIdeas.accepted===true)
-    const unclaimedList =  dummyIdeas.filter(dummyIdeas => dummyIdeas.accepted===false)
+        console.log( list)
+    // const claimedList = list.filter(list => list.accepted===true)
+    // const unclaimedList =  list.filter(list => dummyIdeas.accepted===false)
     return(
 
         <div>
@@ -24,13 +24,13 @@ const UserPage = ({dummyIdeas}) => {
                 <h2>Accepted ideas</h2>
                 <ul>
                     {list}
-                    {claimedList}
+                    {/* {claimedList} */}
                     
                 </ul>
 
                 <h2>Unclaimed Ideas</h2>
                 <ul>
-                    {unclaimedList}
+                    {/* {unclaimedList} */}
                 </ul>
             </section>
             
