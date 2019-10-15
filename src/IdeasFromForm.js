@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { Component} from 'react';
+import FormContext from './FormContext';
 // import { Link } from 'react-router-dom'
 
-const IdeasFromForm = ({dummyIdeas}) => {
-    // const list = dummyIdeas.map(dummyIdeas => (
-    //     <>
-    //     <li>
-    //         {/* <span>Id: {idea.id}</span>{' '}
-    //         <span>Name: </span> */}
-    //         <Link to={`/idea/${dummyIdeas.id}`}>{dummyIdeas.name}</Link>
-    //     </li>
-            
-    //     </>
-    // ))
+class IdeasFromForm extends Component {
+    static contextType = FormContext
+
+    
+    render(){
+        console.log(this.context)
+        // const list = context.map(context=> (
+        //     <>
+        //     <li>
+        //         {/* <span>Id: {idea.id}</span>{' '}
+        //         <span>Name: </span> */}
+        //         {this.context.name}
+        //     </li>
+                
+        //     </>
+        // ))
     return(
         <div>
             <ul>
@@ -19,6 +25,7 @@ const IdeasFromForm = ({dummyIdeas}) => {
             </ul>
         </div>
     )
+    }
 }
 
 export default IdeasFromForm;

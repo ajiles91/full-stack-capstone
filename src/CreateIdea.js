@@ -1,77 +1,197 @@
-import React from 'react';
-import useForm from './CustomHooks'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+// import './CreateIdea.css';
 
-
-// export const [ideaName, useIdeaName] = React.createContext(inputs.ideaName)
-const CreateIdea = () => {
-    
-
-    // handleForm = (event) => {
-    //     alert(this.state.ideaName  + ` was submitted`);
-    //     this.sgetState({isSubmitted:true})
-    //     event.preventDefault();
-    //     this.props.ideaDataFromForm(this.state)
-    //     // props.history.push('/ideas')
-    // }
-
-    // handleChange = (event) => {
-    //     const {name, value} = event.target;
-    //     this.setState({
-    //       [name]: value
-    //     });
-    // }
-    const {inputs, handleChange, handleSubmit} = useForm();
+class CreateIdea extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isSubmitted: false,
+            ideaName: '',
+            ideaSummary: '',
+            authorName:'',
+            email: ''
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }  
     
     
-    return (
-        <>
-            <h2>Submit a new idea</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="idea-name">Idea Name</label>
-                <input 
-                    type="text"
-                    value={inputs.ideaName} 
-                    onChange={handleChange}
-                    name="ideaName"
-                    required 
-                />
+
+    
+
+    handleChange(event) {
+        const {name, value} = event.target;
+        this.setState({
+          [name]: value
+        });
+    }
+
+    
+
+    handleSubmit(event) {
+        alert(this.state.ideaName  + ` was submitted`);
+        this.setState({isSubmitted:true})
+        event.preventDefault();
+        this.props.ideaDataFromForm(this.state)
+    }
+
+    
+
+    
+    
+    render() {
         
+      return (
+        <div className='CreateIdeaApp'>
+          <main role="main">
+              <Link to='/'>
+              <button> to idea page
+                </button>
 
-                <label htmlFor="idea-summary">Idea Summary</label>
-                <textarea 
-                    value={inputs.ideaSummary}  
-                    rows="10"
-                    onChange={handleChange}
-                    name="ideaSummary"
-                    required 
-                />
-        
+                </Link>
+                <header>
+                    <h1>New Idea</h1>
+                </header>
 
-                <label htmlFor="contact-info">Author Name</label>
-                <input 
-                    type="text" 
-                    name="authorName"
-                    value={inputs.authorName}
-                    onChange={handleChange} 
-                    required 
-                />
-            
+                <section>
+                        <form id="submit-idea" onSubmit={this.handleSubmit}>
 
-                <label htmlFor="contact-info">Email</label>
-                <input 
-                    type="email" 
-                    name="email"
-                    value={inputs.email} 
-                    onChange={handleChange} 
-                    required 
-                />
-            
-                <button type='submit'>Add</button>
-            </form>
-            
-        </>
-    )
+                            <div className="form-section">
+                                <label htmlFor="idea-name">Idea Name</label>
+                                <input 
+                                    type="text"
+                                    value={this.state.ideaName} 
+                                    onChange={this.handleChange}
+                                    name="ideaName"
+                                required 
+                                />
+                            </div>
+
+                            <div className="form-section">
+                                <label htmlFor="idea-summary">Idea Summary</label>
+                                <textarea 
+                                    value={this.state.ideaSummary}  
+                                    rows="15"
+                                    onChange={this.handleChange}
+                                    name="ideaSummary"
+                                    required 
+                                />
+                            </div>
+
+                            <div className="author-name-container form-section">
+                                <label htmlFor="contact-info">Author Name</label>
+                                <input 
+                                    type="text" 
+                                    name="authorName"
+                                    value={this.state.authorName}
+                                    onChange={this.handleChange} 
+                                    required 
+                                />
+                            </div>
+
+                            <div className="contact-info-container form-section">
+                                <label htmlFor="contact-info">Email</label>
+                                <input 
+                                    type="text" 
+                                    name="email"
+                                    value={this.state.email} 
+                                    onChange={this.handleChange} 
+                                    required 
+                                />
+                            </div>
+                            
+                            <button type="submit">Submit</button>
+                            
+                            <Link to ="/idea-list">
+                            <button>to Idea List</button>
+                            </Link>
+                           
+                        </form>
+                </section>
+            </main>
+        </div>
+      );
+    }
 }
+  
+export default CreateIdea;
 
 
-export default CreateIdea
+
+
+
+// import React from 'react';
+// import useForm from './CustomHooks'
+// // import { statement } from '@babel/template';
+
+
+
+// // export const [ideaName, useIdeaName] = React.createContext(inputs.ideaName)
+// const CreateIdea = () => {
+   
+
+    
+//     const {inputs, handleChange, handleSubmit} = useForm();
+//     // const [ideaName, setIdeaName] = useState(inputs.ideaName)
+//     // const FormSubmit = React.createContext(state)
+    
+//     return (
+//         <>
+//             <h2>Submit a new idea</h2>
+//             <form onSubmit={handleSubmit}>
+//                 <label htmlFor="idea-name">Idea Name</label>
+//                 <input 
+//                     type="text"
+//                     value={inputs.ideaName} 
+//                     onChange={handleChange}
+//                     name="ideaName"
+//                     required 
+//                 />
+        
+
+//                 <label htmlFor="idea-summary">Idea Summary</label>
+//                 <textarea 
+//                     value={inputs.ideaSummary}  
+//                     rows="10"
+//                     onChange={handleChange}
+//                     name="ideaSummary"
+//                     required 
+//                 />
+        
+
+//                 <label htmlFor="contact-info">Author Name</label>
+//                 <input 
+//                     type="text" 
+//                     name="authorName"
+//                     value={inputs.authorName}
+//                     onChange={handleChange} 
+//                     required 
+//                 />
+            
+
+//                 <label htmlFor="contact-info">Email</label>
+//                 <input 
+//                     type="email" 
+//                     name="email"
+//                     value={inputs.email} 
+//                     onChange={handleChange} 
+//                     required 
+//                 />
+            
+//                 <button type='submit'>Add</button>
+//             </form>
+            
+//         </>
+//     )
+// }
+
+
+// export default CreateIdea
+
+
+
+
+
+
+

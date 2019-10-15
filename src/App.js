@@ -14,23 +14,23 @@ export default class App extends Component {
     ideaSummary: '',
     authorName:'',
     email: '',
-    dummyIdeas: dummyIdeas
+    
   }
 
-  // ideaDataFromForm = (data) => {
-  //   console.log(data)
+  ideaDataFromForm = (data) => {
+    console.log(data)
     
     
-  //   this.setState({
-  //     ideaName: data.ideaName,
-  //     ideaSummary: data.ideaSummary,
-  //     authorName:data.authorName,
-  //     email: data.email,
-  //     isSubmitted: data.isSubmitted
-  //   })
-    
-  //   return data
-  // }
+    this.setState({
+      ideaName: data.ideaName,
+      ideaSummary: data.ideaSummary,
+      authorName:data.authorName,
+      email: data.email,
+      isSubmitted: data.isSubmitted
+    })
+    console.log(this.state)
+    return data
+  }
 
   render() {
   return (
@@ -50,10 +50,10 @@ export default class App extends Component {
           path='/idea/:id' 
           render={(props) => <IdeaDetails {...props} dummyIdeas={dummyIdeas} /> }
         />
-        <FormContext.Provider>
+        <FormContext.Provider value={this.state}>
           <Route 
             path='/create-idea' 
-            component={CreateIdea}
+            render={(props) => <CreateIdea ideaDataFromForm={this.ideaDataFromForm}/> }
           />
         </FormContext.Provider>
         
