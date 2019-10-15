@@ -1,12 +1,37 @@
-import React from 'react';
+import React,{ Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import UserPage from './UserPage'
 import Header from './Header'
 import IdeaList from './IdeaList';
 import CreateIdea from './CreateIdea'
 import IdeaDetails from './IdeaDetails'
+import dummyIdeas from './dummyIdeas'
 
-function App({dummyIdeas}) {
+export default class App extends Component {
+  state = {
+    ideaName: '',
+    ideaSummary: '',
+    authorName:'',
+    email: '',
+    dummyIdeas: dummyIdeas
+  }
+
+  // ideaDataFromForm = (data) => {
+  //   console.log(data)
+    
+    
+  //   this.setState({
+  //     ideaName: data.ideaName,
+  //     ideaSummary: data.ideaSummary,
+  //     authorName:data.authorName,
+  //     email: data.email,
+  //     isSubmitted: data.isSubmitted
+  //   })
+    
+  //   return data
+  // }
+
+  render() {
   return (
     <div>
       <Header />
@@ -33,7 +58,6 @@ function App({dummyIdeas}) {
         <Route />
       </Switch>
     </div>
-  );
+  )
+  };
 }
-
-export default App;

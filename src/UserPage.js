@@ -1,18 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import IdeasFromForm from'./IdeasFromForm'
 
 const UserPage = ({dummyIdeas}) => {
-    const list = dummyIdeas.map(dummyIdeas => (
-        <Link to={`/idea/${dummyIdeas.id}`}>
+    
+    const linkMap = dummyIdea => (
+        <Link to={`/idea/${dummyIdea.id}`}>
             <li>
-                <span>Id: {dummyIdeas.id}</span>{' '}
-                <span>Name: {dummyIdeas.name}</span>
+                <span>Id: {dummyIdea.id}</span>{' '}
+                <span>Name: {dummyIdea.name}</span>
             </li>
         </Link>
-    ))
-        console.log( list)
-    // const claimedList = list.filter(list => list.accepted===true)
-    // const unclaimedList =  list.filter(list => dummyIdeas.accepted===false)
+    );
+
+const claimed = dummyIdeas.filter(idea => idea.accepted === true);
+const unclaimed =  dummyIdeas.filter(idea => idea.accepted === false);
+
+const claimedList = claimed.map(linkMap);
+const unclaimedList = unclaimed.map(linkMap);
+    
     return(
 
         <div>
@@ -23,14 +29,14 @@ const UserPage = ({dummyIdeas}) => {
             <section>
                 <h2>Accepted ideas</h2>
                 <ul>
-                    {list}
-                    {/* {claimedList} */}
-                    
+                    {/* {list} */}
+                    {claimedList}
+                    <IdeasFromForm/>
                 </ul>
 
                 <h2>Unclaimed Ideas</h2>
                 <ul>
-                    {/* {unclaimedList} */}
+                    {unclaimedList}
                 </ul>
             </section>
             
@@ -38,5 +44,7 @@ const UserPage = ({dummyIdeas}) => {
         </div>
     )
 }
+
+
 
 export default UserPage;
