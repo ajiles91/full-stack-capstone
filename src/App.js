@@ -6,6 +6,7 @@ import IdeaList from './IdeaList';
 import CreateIdea from './CreateIdea'
 import IdeaDetails from './IdeaDetails'
 import dummyIdeas from './dummyIdeas'
+import FormContext from './FormContext';
 
 export default class App extends Component {
   state = {
@@ -49,10 +50,12 @@ export default class App extends Component {
           path='/idea/:id' 
           render={(props) => <IdeaDetails {...props} dummyIdeas={dummyIdeas} /> }
         />
-        <Route 
-          path='/create-idea' 
-          component={CreateIdea}
-        />
+        <FormContext.Provider>
+          <Route 
+            path='/create-idea' 
+            component={CreateIdea}
+          />
+        </FormContext.Provider>
         
 
         <Route />

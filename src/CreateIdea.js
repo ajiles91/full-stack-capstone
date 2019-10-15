@@ -1,12 +1,14 @@
 import React from 'react';
 import useForm from './CustomHooks'
 
+
+// export const [ideaName, useIdeaName] = React.createContext(inputs.ideaName)
 const CreateIdea = () => {
     
 
     // handleForm = (event) => {
     //     alert(this.state.ideaName  + ` was submitted`);
-    //     this.setState({isSubmitted:true})
+    //     this.sgetState({isSubmitted:true})
     //     event.preventDefault();
     //     this.props.ideaDataFromForm(this.state)
     //     // props.history.push('/ideas')
@@ -19,6 +21,7 @@ const CreateIdea = () => {
     //     });
     // }
     const {inputs, handleChange, handleSubmit} = useForm();
+    
     
     return (
         <>

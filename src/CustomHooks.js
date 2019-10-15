@@ -1,4 +1,6 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
+
+
 
 const useForm = (callback) => {
     const [inputs, setInputs] = useState({})
@@ -9,6 +11,7 @@ const useForm = (callback) => {
             event.preventDefault();
             // this.props.ideaDataFromForm(this.state)
             // props.history.push('/ideas')
+            
         }
     }
     const handleChange = (event) => {
