@@ -4,7 +4,7 @@ const useForm = (callback) => {
     const [inputs, setInputs] = useState({})
     const handleSubmit = (event) => {
         if (event) {
-            alert(this.state.ideaName  + ` was submitted`);
+            alert(`Idea Created! Name: ${inputs.ideaName}`);
           // this.setState({isSubmitted:true})
             event.preventDefault();
             // this.props.ideaDataFromForm(this.state)
