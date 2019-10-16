@@ -1,7 +1,5 @@
 import {useState} from 'react';
 
-
-
 const useForm = (callback) => {
     const [inputs, setInputs] = useState({})
     const handleSubmit = (event) => {
@@ -9,14 +7,14 @@ const useForm = (callback) => {
             alert(`Idea Created! Name: ${inputs.ideaName}`);
           // this.setState({isSubmitted:true})
             event.preventDefault();
-            this.ideaDataFromForm(inputs)
+            ideaDataFromForm(inputs)
             // props.history.push('/ideas')
 
-            let inputs = {
-                name:inputs.ideaName,
+            // let inputs = {
+            //     name:inputs.ideaName,
 
-            }
-            console.log(inputs)
+            // }
+            // console.log(inputs)
             
         }
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import IdeasFromForm from'./IdeasFromForm'
-import FormContext from './FormContext';
+// import FormContext from './FormContext';
 
 const UserPage = ({dummyIdeas}) => {
     
@@ -28,7 +28,7 @@ const unclaimedList = unclaimed.map(linkMap);
                 <Link to='/create-idea'>Create Idea</Link>
             </section>
             <section>
-                <h2>Accepted ideas</h2>
+                <h2>Claimed Ideas</h2>
                 <ul>
                     {/* {list} */}
                     {claimedList}

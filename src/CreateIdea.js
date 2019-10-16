@@ -5,18 +5,18 @@ import { Link } from 'react-router-dom';
 class CreateIdea extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isSubmitted: false,
-            ideaName: '',
-            ideaSummary: '',
-            authorName:'',
-            email: ''
-        }
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }  
     
-    
+    state = {
+        isSubmitted: false,
+        ideaName: '',
+        ideaSummary: '',
+        authorName:'',
+        email: ''
+    }
 
     
 
@@ -41,7 +41,7 @@ class CreateIdea extends Component {
     
     
     render() {
-        
+        console.log()
       return (
         <div className='CreateIdeaApp'>
           <main role="main">
@@ -123,7 +123,7 @@ export default CreateIdea;
 
 // import React from 'react';
 // import useForm from './CustomHooks'
-// // import { statement } from '@babel/template';
+
 
 
 

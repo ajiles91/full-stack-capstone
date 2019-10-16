@@ -12,17 +12,16 @@ export default class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-    ideaName: '',
-    ideaSummary: '',
-    authorName:'',
-    email: '',
-    
+      ideaName: '',
+      ideaSummary: '',
+      authorName:'',
+      email: '',
+    }
+
   }
 
-}
-
   ideaDataFromForm = (data) => {
-    console.log(data)
+    // console.log(data)
     data.id = (Math.random() * (100-11))+11;
     
     this.setState({
@@ -36,9 +35,14 @@ export default class App extends Component {
     
   }
 
+  
+
   render() {
+    
+    console.log(this.state)
   return (
     <div>
+      <FormContext.Provider value={{state: this.state, ideaDataFromForm:this.ideaDataFromForm}} >
       <Header />
       <Switch>
         <Route 
@@ -54,17 +58,19 @@ export default class App extends Component {
           path='/idea/:id' 
           render={(props) => <IdeaDetails {...props} dummyIdeas={dummyIdeas} /> }
         />
-        <FormContext.Provider value={this.state}>
+       
           <Route 
             path='/create-idea' 
             render={(props) => <CreateIdea ideaDataFromForm={this.ideaDataFromForm}/> }
           />
-        </FormContext.Provider>
-        
+      
 
         <Route />
       </Switch>
-    </div>
+      
+      </FormContext.Provider>
+      </div>
+    
   )
   };
 }
