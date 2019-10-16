@@ -9,13 +9,17 @@ import dummyIdeas from './dummyIdeas'
 import FormContext from './FormContext';
 
 export default class App extends Component {
-  state = {
+  constructor(props){
+    super(props)
+    this.state = {
     ideaName: '',
     ideaSummary: '',
     authorName:'',
     email: '',
     
   }
+
+}
 
   ideaDataFromForm = (data) => {
     console.log(data)

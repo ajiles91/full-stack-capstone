@@ -33,7 +33,7 @@ const unclaimedList = unclaimed.map(linkMap);
                     {/* {list} */}
                     {claimedList}
                     
-                        <IdeasFromForm/>
+                    <IdeasFromForm/>
                     
                     
                 </ul>
