@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import FormContext from './FormContext';
 // import './CreateIdea.css';
 
 class CreateIdea extends Component {
+    static contextType = FormContext;
     constructor(props) {
         super(props);
         
@@ -33,13 +35,10 @@ class CreateIdea extends Component {
         alert(this.state.ideaName  + ` was submitted`);
         this.setState({isSubmitted:true})
         event.preventDefault();
+        // let state = this.context
         this.props.ideaDataFromForm(this.state)
     }
 
-    
-
-    
-    
     render() {
         console.log()
       return (
@@ -114,7 +113,7 @@ class CreateIdea extends Component {
       );
     }
 }
-  
+CreateIdea.contextType = FormContext;
 export default CreateIdea;
 
 

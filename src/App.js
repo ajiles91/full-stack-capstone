@@ -17,7 +17,7 @@ export default class App extends Component {
       authorName:'',
       email: '',
     }
-
+    this.ideaDataFromForm = this.ideaDataFromForm.bind(this);
   }
 
   ideaDataFromForm = (data) => {
