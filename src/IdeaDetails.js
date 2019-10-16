@@ -10,7 +10,7 @@ const Idea = (props) => {
     const claimedButton = (data.accepted ===true )? null : <button onClick='this.handleClick'> claim idea</button>
     
     // handleClick() {
-    //     let data.accepted = !data.accepted
+        
     // }
 
     return (

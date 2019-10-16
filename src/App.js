@@ -19,7 +19,7 @@ export default class App extends Component {
 
   ideaDataFromForm = (data) => {
     console.log(data)
-    
+    data.id = (Math.random() * (100-11))+11;
     
     this.setState({
       ideaName: data.ideaName,
@@ -29,7 +29,7 @@ export default class App extends Component {
       isSubmitted: data.isSubmitted
     })
     console.log(this.state)
-    return data
+    
   }
 
   render() {
