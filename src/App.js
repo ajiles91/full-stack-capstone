@@ -7,6 +7,7 @@ import CreateIdea from './CreateIdea'
 import IdeaDetails from './IdeaDetails'
 import dummyIdeas from './dummyIdeas'
 import FormContext from './FormContext';
+const uuidv1 = require('uuid/v1');
 
 export default class App extends Component {
   constructor(props){
@@ -23,14 +24,16 @@ export default class App extends Component {
   ideaDataFromForm = (data) => {
     // console.log(data)
     
-    // data.id = (Math.random() * (100-11))+11;
+    data.id = uuidv1()
+    data.claimed = false
+    data.submitted = true
     this.setState({
       ideaName: data.ideaName,
       ideaSummary: data.ideaSummary,
       authorName:data.authorName,
       email: data.email,
-      claimed: data.claimed
-      // id: data.id
+      claimed: data.claimed,
+      id: data.id
     })
 
     

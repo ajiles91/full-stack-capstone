@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,  Redirect } from 'react-router-dom';
 import FormContext from './FormContext';
 // import './CreateIdea.css';
 // const uuidv1 = require('uuid/v1');
@@ -8,18 +8,20 @@ class CreateIdea extends Component {
     static contextType = FormContext;
     constructor(props) {
         super(props);
+
+        this.state = {
+            submitted: false,
+            ideaName: '',
+            ideaSummary: '',
+            authorName:'',
+            email: ''
+        }
         
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }  
     
-    state = {
-        isSubmitted: false,
-        ideaName: '',
-        ideaSummary: '',
-        authorName:'',
-        email: ''
-    }
+    
 
     
 
@@ -34,17 +36,20 @@ class CreateIdea extends Component {
 
     handleSubmit(event) {
         alert(this.state.ideaName  + ` was submitted`);
-        this.setState({
-            claimed: true
-            // id: uuidv1()
-        })
         event.preventDefault();
-   
+        this.setState({
+            submitted:true
+        })
         this.props.ideaDataFromForm(this.state)
+        // this.props.history.push('/')
     }
 
     render() {
-        console.log()
+        console.log(this.state.submitted)
+        if (this.state.submitted === true) {
+            return <Redirect to='/' />
+        }
+
       return (
         <div className='CreateIdeaApp'>
           <main role="main">

@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import FormContext from './FormContext'
 
 const IdeaDetails = (props) => {
     
     let index = props.match.params.id - 1
     const data = props.dummyIdeas[index]
     const [claimed,setClaimed] = useState(data.claimed)
+    // const[submitted, setSubmitted] = 
     
+    const context = useContext(FormContext)
+    console.log(context)
+
     console.log(data.claimed)
 
     const handleClaimedClick = () => {
@@ -20,6 +25,8 @@ const IdeaDetails = (props) => {
 
     const claimedButton = claimed ? null : <button onClick={handleClaimedClick}> Claim Idea</button>
     const releasedButton = (claimed === false )? null : <button onClick={handleReleasedClick}> Unclaim Idea</button>
+    // const ideaDetails = 
+
     
 
     return (
