@@ -4,27 +4,29 @@ import FormContext from './FormContext';
 
 class IdeasFromForm extends Component {
     static contextType = FormContext
-
-    
     render(){
-        console.log(this.context)
-        // const list = context.map(context=> (
+        // let formData = this.context.state
+        console.log(this.context.state)
+        // console.log(formData)
+        // const list = formData.map(formData=> (
         //     <>
-        //     <li>
-        //         {/* <span>Id: {idea.id}</span>{' '}
-        //         <span>Name: </span> */}
-        //         {this.context.name}
-        //     </li>
+        //         <li>
+        //             {/* <span>Id: {idea.id}</span>{' '}
+        //             <span>Name: </span> */}
+        //             {this.context.state.ideaName}
+        //             <Link to={`/idea/${this.context.state.id}`}>{this.context.state.ideaName}</Link>
+        //         </li>
                 
         //     </>
         // ))
-    return(
-        <div>
-            <ul>
-                <p>stuff</p>
-            </ul>
-        </div>
-    )
+        return (
+            <div>
+                <ul>
+                    <p>stuff</p>
+                    {/* <p>{this.context.state.ideaName}</p> */}
+                </ul>
+            </div>
+        )
     }
 }
 

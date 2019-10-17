@@ -4,30 +4,30 @@ const IdeaDetails = (props) => {
     
     let index = props.match.params.id - 1
     const data = props.dummyIdeas[index]
-    const [accepted,setAccepted] = useState(data.accepted)
+    const [claimed,setClaimed] = useState(data.claimed)
     
-    console.log(data.accepted)
+    console.log(data.claimed)
 
     const handleClaimedClick = () => {
-        setAccepted(true)
-        props.dummyIdeas[index].accepted = true
+        setClaimed(true)
+        props.dummyIdeas[index].claimed = true
     }
 
     const handleReleasedClick = () => {
-        setAccepted(false)
-        props.dummyIdeas[index].accepted = false
+        setClaimed(false)
+        props.dummyIdeas[index].claimed = false
     }
 
-    const claimedButton = accepted ? null : <button onClick={handleClaimedClick}> Claim Idea</button>
-    const releasedButton = (accepted === false )? null : <button onClick={handleReleasedClick}> claim Idea</button>
+    const claimedButton = claimed ? null : <button onClick={handleClaimedClick}> Claim Idea</button>
+    const releasedButton = (claimed === false )? null : <button onClick={handleReleasedClick}> Unclaim Idea</button>
     
 
     return (
         <>
-            <p>Idea: {data.id}</p>
+            <p>Id: {data.id}</p>
             <p>Name: {data.name}</p>
             <p>Description: {data.des}</p>
-            <p>Status: {true ? 'claimed': 'unclaimed'}</p>
+            <p>Status: {claimed ? 'claimed': 'unclaimed'}</p>
             <a href={`mailto:${data.email}`} rel="noopener noreferrer" target="_blank" class='button-border'>
                 <span class='button-inner'>Contact Author</span>
             </a>

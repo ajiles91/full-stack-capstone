@@ -15,13 +15,13 @@ const UserPage = ({dummyIdeas}) => {
         </Link>
     );
 
-const claimed = dummyIdeas.filter(idea => idea.accepted === true);
-const unclaimed =  dummyIdeas.filter(idea => idea.accepted === false);
+    const claimed = dummyIdeas.filter(idea => idea.claimed === true);
+    const unclaimed =  dummyIdeas.filter(idea => idea.claimed === false);
 
-const claimedList = claimed.map(linkMap);
-const unclaimedList = unclaimed.map(linkMap);
+    const claimedList = claimed.map(linkMap);
+    const unclaimedList = unclaimed.map(linkMap);
     
-    return(
+    return (
 
         <div>
             <section style={{width: '200px', display: 'flex', justifyContent: 'space-between'}}>
@@ -31,19 +31,13 @@ const unclaimedList = unclaimed.map(linkMap);
             <section>
                 <h2>Claimed Ideas</h2>
                 <ul>
-                    {/* {list} */}
                     {claimedList}
-                    {/* <FormContext.Comsumer> */}
-                         <IdeasFromForm/> 
-                        
-                    {/* </FormContext.Comsumer> */}
-                    
-                    
                 </ul>
 
                 <h2>Unclaimed Ideas</h2>
                 <ul>
                     {unclaimedList}
+                    <IdeasFromForm/> 
                 </ul>
             </section>
             

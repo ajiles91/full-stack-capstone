@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FormContext from './FormContext';
 // import './CreateIdea.css';
+// const uuidv1 = require('uuid/v1');
 
 class CreateIdea extends Component {
     static contextType = FormContext;
@@ -33,9 +34,12 @@ class CreateIdea extends Component {
 
     handleSubmit(event) {
         alert(this.state.ideaName  + ` was submitted`);
-        this.setState({isSubmitted:true})
+        this.setState({
+            claimed: true
+            // id: uuidv1()
+        })
         event.preventDefault();
-        // let state = this.context
+   
         this.props.ideaDataFromForm(this.state)
     }
 
@@ -92,7 +96,7 @@ class CreateIdea extends Component {
                             <div className="contact-info-container form-section">
                                 <label htmlFor="contact-info">Email</label>
                                 <input 
-                                    type="text" 
+                                    type="email" 
                                     name="email"
                                     value={this.state.email} 
                                     onChange={this.handleChange} 
@@ -102,9 +106,9 @@ class CreateIdea extends Component {
                             
                             <button type="submit">Submit</button>
                             
-                            <Link to ="/idea-list">
+                            {/* <Link to ="/idea-list">
                             <button>to Idea List</button>
-                            </Link>
+                            </Link> */}
                            
                         </form>
                 </section>
