@@ -22,8 +22,12 @@ class IdeasFromForm extends Component {
         return (
             <div>
                 <ul>
-                    <p>stuff</p>
-                    {/* <p>{this.context.state.ideaName}</p> */}
+                <li>
+                    {/* <Link to={`/idea/${this.context.state.id}`}>
+                        {this.context.state.ideaName}
+                    </Link> */}
+                    stuff
+                </li>
                 </ul>
             </div>
         )

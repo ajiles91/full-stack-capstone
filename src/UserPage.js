@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import IdeasFromForm from'./IdeasFromForm'
-// import FormContext from './FormContext';
+import FormContext from './FormContext';
 
 
-const UserPage = ({dummyIdeas}) => {
-    
+const UserPage = ({dummyIdeas = []}) => {
+    const ideasCtx = React.useContext(FormContext);
+
     const linkMap = dummyIdea => (
         <Link to={`/idea/${dummyIdea.id}`}>
             <li>
@@ -15,8 +16,8 @@ const UserPage = ({dummyIdeas}) => {
         </Link>
     );
 
-    const claimed = dummyIdeas.filter(idea => idea.claimed === true);
-    const unclaimed =  dummyIdeas.filter(idea => idea.claimed === false);
+    const claimed = ideasCtx.ideas.filter(idea => idea.claimed === true);
+    const unclaimed =  ideasCtx.ideas.filter(idea => idea.claimed === false);
 
     const claimedList = claimed.map(linkMap);
     const unclaimedList = unclaimed.map(linkMap);
@@ -24,9 +25,15 @@ const UserPage = ({dummyIdeas}) => {
     return (
 
         <div>
-            <section style={{width: '200px', display: 'flex', justifyContent: 'space-between'}}>
-                <Link to='/ideas'>View Idea List</Link>
-                <Link to='/create-idea'>Create Idea</Link>
+            <section 
+            style={{
+                width: '200px', 
+                display: 'flex', 
+                justifyContent: 'space-between'
+                }}
+            >
+            <Link to='/ideas'>View Idea List</Link>
+            <Link to='/create-idea'>Create Idea</Link>
             </section>
             <section>
                 <h2>Claimed Ideas</h2>

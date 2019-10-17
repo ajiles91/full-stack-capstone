@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import UserPage from './UserPage'
 import Header from './Header'
 // import IdeaList from './IdeaList';
@@ -18,60 +18,41 @@ export default class App extends Component {
       authorName:'',
       email: '',
     }
+    this.ideas = dummyIdeas;
     this.ideaDataFromForm = this.ideaDataFromForm.bind(this);
   }
 
-  ideaDataFromForm = (data) => {
-    // console.log(data)
-    
-    data.id = uuidv1()
-    data.claimed = false
-    data.submitted = true
-    this.setState({
-      ideaName: data.ideaName,
-      ideaSummary: data.ideaSummary,
-      authorName:data.authorName,
-      email: data.email,
-      claimed: data.claimed,
-      id: data.id
-    })
-
-    
-  }
-
-  
+  ideaDataFromForm = data => {
+    debugger;
+    data.id = uuidv1();
+    data.claimed = false;
+    data.submitted = true;
+    this.ideas.push(data);
+    // this.props.history.push("/");
+  };
 
   render() {
     return (
       <div>
-        <FormContext.Provider value={{state: this.state, ideaDataFromForm:this.ideaDataFromForm}} >
+        <FormContext.Provider value={{ ideas: this.ideas }}>
           <Header />
-          <Switch>
-            <Route 
-              path='/' 
-              exact
-              render={(props) => <UserPage {...props} dummyIdeas={dummyIdeas} /> }
-            />
-            {/* <Route 
-              path='/ideas' 
-              render={(props) => <IdeaList {...props} dummyIdeas={dummyIdeas} /> }
-            /> */}
-            <Route 
-              path='/idea/:id' 
-              render={(props) => <IdeaDetails {...props} dummyIdeas={dummyIdeas} /> }
-            />
-        
-            <Route 
-              path='/create-idea' 
-              render={(props) => <CreateIdea ideaDataFromForm={this.ideaDataFromForm}/> }
-            />
-          
-
-            <Route />
-          </Switch>
-        
+          <BrowserRouter>
+            <Switch>
+              <Route path="/" exact render={props => <UserPage />} />
+              <Route
+                path="/idea/:id"
+                render={props => <IdeaDetails {...props} />}
+              />
+              <Route
+                path="/create-idea"
+                render={props => (
+                  <CreateIdea ideaDataFromForm={this.ideaDataFromForm} />
+                )}
+              />
+            </Switch>
+          </BrowserRouter>
         </FormContext.Provider>
-        </div>
+      </div>
       
     )
   };

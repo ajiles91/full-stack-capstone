@@ -21,18 +21,12 @@ class CreateIdea extends Component {
         this.handleChange = this.handleChange.bind(this);
     }  
     
-    
-
-    
-
     handleChange(event) {
         const {name, value} = event.target;
         this.setState({
           [name]: value
         });
     }
-
-    
 
     handleSubmit(event) {
         alert(this.state.ideaName  + ` was submitted`);
@@ -41,11 +35,11 @@ class CreateIdea extends Component {
             submitted:true
         })
         this.props.ideaDataFromForm(this.state)
-        // this.props.history.push('/')
     }
 
     render() {
         console.log(this.state.submitted)
+
         if (this.state.submitted === true) {
             return <Redirect to='/' />
         }
@@ -53,11 +47,10 @@ class CreateIdea extends Component {
       return (
         <div className='CreateIdeaApp'>
           <main role="main">
-              <Link to='/'>
-              <button> to idea page
-                </button>
-
+                <Link to='/'>
+                    <button> to idea page</button>
                 </Link>
+
                 <header>
                     <h1>New Idea</h1>
                 </header>
@@ -80,7 +73,7 @@ class CreateIdea extends Component {
                                 <label htmlFor="idea-summary">Idea Summary</label>
                                 <textarea 
                                     value={this.state.ideaSummary}  
-                                    rows="15"
+                                    rows="10"
                                     onChange={this.handleChange}
                                     name="ideaSummary"
                                     required 
@@ -111,10 +104,6 @@ class CreateIdea extends Component {
                             
                             <button type="submit">Submit</button>
                             
-                            {/* <Link to ="/idea-list">
-                            <button>to Idea List</button>
-                            </Link> */}
-                           
                         </form>
                 </section>
             </main>
