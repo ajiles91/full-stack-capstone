@@ -33,8 +33,11 @@ export default class App extends Component {
     // this.props.history.push("/");
   };
 
+  
+
   render() {
     return (
+      
       <div>
         <FormContext.Provider value={{ ideas: this.ideas }}>
           {/* <Header /> */}

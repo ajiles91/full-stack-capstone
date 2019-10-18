@@ -1,39 +1,38 @@
-import React, { useState, useContext, Redirect } from 'react';
+import React, { useState, useContext } from 'react';
 import FormContext from './FormContext'
 
 const IdeaDetails = (props) => {
     const ideasContext = React.useContext(FormContext);
+    const context = useContext(FormContext)
     let index = props.match.params.id - 1
     // const data = props.dummyIdeas[index]
     const data = ideasContext.ideas[index]
     const [claimed,setClaimed] = useState(data.claimed)
-    // const[submitted, setSubmitted] = 
+    // const [claimed,setClaimed] = useState(context.claimed)
+   
     
-    const context = useContext(FormContext)
-    console.log(context)
-
+    console.log(context.ideas)
+    console.log(context.claimed)
+    console.log(ideasContext.ideas)
+    console.log(data)
+    console.log(claimed)
     console.log(data.claimed)
 
     const handleClaimedClick = () => {
         setClaimed(true)
-        // props.dummyIdeas[index].claimed = true
-        ideasContext.ideas[index].claimed =true
-        if (ideasContext.ideas[index].claimed === true) {
-            return <Redirect to="/" />;
-        }
+        ideasContext.ideas[index].claimed = true
+        // context.claimed = true
     }
 
     const handleReleasedClick = () => {
         setClaimed(false)
-        // props.dummyIdeas[index].claimed = false
-        ideasContext.ideas[index].claimed =false
-        if (ideasContext.ideas[index].claimed === false) {
-            return <Redirect to="/" />;
-        }
+        ideasContext.ideas[index].claimed = false
+        // context.claimed = false
+    
     }
 
     const claimedButton = claimed ? null : <button onClick={handleClaimedClick}> Claim Idea</button>
-    const releasedButton = (claimed === false )? null : <button onClick={handleReleasedClick}> Unclaim Idea</button>
+    const releasedButton = (claimed === false )? null : <button onClick={handleReleasedClick}> Release Idea</button>
    
     return (
         <>
