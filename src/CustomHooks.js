@@ -31,3 +31,15 @@ const useForm = (callback) => {
     };
 }
 export default useForm;
+
+// const IdeaDetails = ({dummyIdeas =[]}) => {
+//     const ideasContext = React.useContext(FormContext);
+//     let index = props.match.params.id - 1
+//     const data = props.dummyIdeas[index]
+//     const [claimed,setClaimed] = useState(data.claimed)
+
+// const IdeaDetails = ({ match, dummyIdeas }) => {
+//     const ideasContext = React.useContext(FormContext);
+//     let index = match.params.id - 1
+//     const data = dummyIdeas[index]
+//     const [claimed,setClaimed] = useState(data.claimed)

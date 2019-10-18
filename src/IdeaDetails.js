@@ -1,12 +1,15 @@
 import React, { useState, useContext } from 'react';
 import FormContext from './FormContext'
 
-const IdeaDetails = ({props}) => {
+const IdeaDetails = (props) => {
     const ideasContext = React.useContext(FormContext);
     let index = props.match.params.id - 1
-    const data = props.dummyIdeas[index]
+    console.log(index)
+    // const data = props.dummyIdeas[index]
+    const data = this.ideasContext[index]
     const [claimed,setClaimed] = useState(data.claimed)
-    
+
+   
     
     const context = useContext(FormContext)
     console.log(context)
