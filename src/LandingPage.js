@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom"
+import { Link, Router } from "react-router-dom"
 
 class LandingPage extends Component {
     
@@ -21,12 +21,13 @@ class LandingPage extends Component {
                                 someone that wants to bring your idea to life!Do you enjoy building projects but run short of ideas?  
                                 Do you just want to lend your skills to bring the next big idea to light?
                             </p>
-
-                            <Link to ="/idea-list">
-                                <button>
-                                    See And Claim Some Ideas!
-                                </button>
-                            </Link>
+                            <Router>
+                                <Link to ="/idea-list">
+                                    <button>
+                                        See And Claim Some Ideas!
+                                    </button>
+                                </Link>
+                            </Router>
                         </section>
                 </div>
             </main>

@@ -23,7 +23,6 @@ export default class App extends Component {
   }
 
   ideaDataFromForm = data => {
-    debugger;
     data.id = uuidv1();
     data.claimed = false;
     data.submitted = true;
@@ -34,7 +33,9 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        
         <FormContext.Provider value={{ ideas: this.ideas }}>
+        <BrowserRouter>
           <Header />
           
             <Switch>
@@ -58,12 +59,13 @@ export default class App extends Component {
 
               <Route 
                 path="/" exact 
-                render= {<LandingPage />} 
+                render= {props => <LandingPage />} 
               />
 
             </Switch>
-    
+            </BrowserRouter>
         </FormContext.Provider>
+        
       </div>
       
     )
