@@ -40,6 +40,10 @@ export default class App extends Component {
           
             <Switch>
 
+            <Route 
+                path="/" exact 
+                render= {props => <LandingPage />} 
+              />
               <Route 
               path="/idea-list"
               render={props => <UserPage />} 
@@ -55,11 +59,6 @@ export default class App extends Component {
                 render={props => (
                   <CreateIdea ideaDataFromForm={this.ideaDataFromForm} />
                 )}
-              />
-
-              <Route 
-                path="/" exact 
-                render= {props => <LandingPage />} 
               />
 
             </Switch>
