@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import IdeasFromForm from'./IdeasFromForm'
 import FormContext from './FormContext';
 
 
@@ -10,8 +9,10 @@ const UserPage = ({dummyIdeas = []}) => {
     const linkMap = dummyIdea => (
         <Link to={`/idea/${dummyIdea.id}`}>
             <li>
-                <span>Id: {dummyIdea.id}</span>{' '}
-                <span>Name: {dummyIdea.name}</span>
+                {/* <span>Id: {dummyIdea.id}</span>{' '} */}
+                {/* <span>Name: {dummyIdea.name}</span> */}
+                <span>Id: {ideasCtx.ideas.id}</span>{' '}
+                <span>Name: {ideasCtx.ideas.ideaName}</span>
             </li>
         </Link>
     );
@@ -44,7 +45,6 @@ const UserPage = ({dummyIdeas = []}) => {
                 <h2>Unclaimed Ideas</h2>
                 <ul>
                     {unclaimedList}
-                    <IdeasFromForm/> 
                 </ul>
             </section>
             

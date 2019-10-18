@@ -22,7 +22,7 @@ class LandingPage extends Component {
                                 Do you just want to lend your skills to bring the next big idea to light?
                             </p>
 
-                            <Link to ="/ideas">
+                            <Link to ="/idea-list">
                                 <button>
                                     See And Claim Some Ideas!
                                 </button>

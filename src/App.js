@@ -2,11 +2,11 @@ import React,{ Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import UserPage from './UserPage'
 import Header from './Header'
-// import IdeaList from './IdeaList';
 import CreateIdea from './CreateIdea'
 import IdeaDetails from './IdeaDetails'
 import dummyIdeas from './dummyIdeas'
 import FormContext from './FormContext';
+import LandingPage from './LandingPage'
 const uuidv1 = require('uuid/v1');
 
 export default class App extends Component {
@@ -36,21 +36,33 @@ export default class App extends Component {
       <div>
         <FormContext.Provider value={{ ideas: this.ideas }}>
           <Header />
-          <BrowserRouter>
+          
             <Switch>
-              <Route path="/" exact render={props => <UserPage />} />
+
+              <Route 
+              path="/idea-list"
+              render={props => <UserPage />} 
+              />
+
               <Route
                 path="/idea/:id"
                 render={props => <IdeaDetails {...props} />}
               />
+
               <Route
                 path="/create-idea"
                 render={props => (
                   <CreateIdea ideaDataFromForm={this.ideaDataFromForm} />
                 )}
               />
+
+              <Route 
+                path="/" exact 
+                render= {<LandingPage />} 
+              />
+
             </Switch>
-          </BrowserRouter>
+    
         </FormContext.Provider>
       </div>
       
