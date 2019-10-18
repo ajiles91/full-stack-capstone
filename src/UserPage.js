@@ -17,8 +17,8 @@ const UserPage = ({dummyIdeas = []}) => {
         </Link>
     );
 
-    const claimed = ideasCtx.ideas.filter(idea => idea.claimed === true);
-    const unclaimed =  ideasCtx.ideas.filter(idea => idea.claimed === false);
+    const claimed = ideasCtx.ideas.filter(idea => ideasCtx.ideas.claimed === true);
+    const unclaimed =  ideasCtx.ideas.filter(idea => ideasCtx.ideas.claimed === false);
 
     const claimedList = claimed.map(linkMap);
     const unclaimedList = unclaimed.map(linkMap);
@@ -42,7 +42,7 @@ const UserPage = ({dummyIdeas = []}) => {
                     {claimedList}
                 </ul>
 
-                <h2>Unclaimed Ideas</h2>
+           <h2>Unclaimed Ideas</h2>
                 <ul>
                     {unclaimedList}
                 </ul>

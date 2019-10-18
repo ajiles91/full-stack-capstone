@@ -7,6 +7,7 @@ import IdeaDetails from './IdeaDetails'
 import dummyIdeas from './dummyIdeas'
 import FormContext from './FormContext';
 import LandingPage from './LandingPage'
+
 const uuidv1 = require('uuid/v1');
 
 export default class App extends Component {
@@ -34,16 +35,17 @@ export default class App extends Component {
     return (
       <div>
         
-        <FormContext.Provider value={{ ideas: this.ideas }}>
+        {/* <FormContext.Provider value={{ ideas: this.ideas }}> */}
         <BrowserRouter>
           <Header />
           
             <Switch>
-
-            <Route 
-                path="/" exact 
-                render= {props => <LandingPage />} 
+ 
+             <Route 
+                path="/" exact
+                component= {<LandingPage />}
               />
+              <FormContext.Provider value={{ ideas: this.ideas }}>
               <Route 
               path="/idea-list"
               render={props => <UserPage />} 
@@ -60,10 +62,10 @@ export default class App extends Component {
                   <CreateIdea ideaDataFromForm={this.ideaDataFromForm} />
                 )}
               />
-
+              </FormContext.Provider>
             </Switch>
+            
             </BrowserRouter>
-        </FormContext.Provider>
         
       </div>
       

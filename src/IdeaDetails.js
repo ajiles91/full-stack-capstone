@@ -4,7 +4,7 @@ import FormContext from './FormContext'
 const IdeaDetails = (props) => {
     const ideasContext = React.useContext(FormContext);
     let index = props.match.params.id - 1
-    console.log(index)
+    // console.log(index)
     // const data = props.dummyIdeas[index]
     const data = ideasContext.ideas[index]
     const [claimed,setClaimed] = useState(data.claimed)
@@ -24,7 +24,7 @@ const IdeaDetails = (props) => {
 
     const handleReleasedClick = () => {
         setClaimed(false)
-    
+        // props.dummyIdeas[index].claimed = false
         ideasContext.ideas[index].claimed = false
     }
 
@@ -36,6 +36,7 @@ const IdeaDetails = (props) => {
            <p>Id: {data.id}</p>
             <p>Name: {data.ideaName}</p>
             <p>Description: {data.ideaSummary}</p>
+
             <p>Status: {claimed ? 'claimed': 'unclaimed'}</p>
             <a href={`mailto:${data.email}`} rel="noopener noreferrer" target="_blank" class='button-border'>
                 <span class='button-inner'>Contact Author</span>
