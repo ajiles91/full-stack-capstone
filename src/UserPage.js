@@ -44,7 +44,7 @@ const UserPage = ({ dummyIdeas = [] }) => {
           justifyContent: "space-between"
         }}
       >
-        <Link to="/ideas">View Idea List</Link>
+      
         <Link to="/create-idea">Create Idea</Link>
       </section>
       <section>
