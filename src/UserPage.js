@@ -10,7 +10,8 @@ const UserPage = ({ dummyIdeas = [] }) => {
   const linkMap = dummyIdea => (
     <Link to={`/idea/${dummyIdea.id}`}>
       <li>
-        <span>Id: {dummyIdea.id}</span> <span>Name: {dummyIdea.ideaName}</span>
+        <span>{dummyIdea.ideaName}</span>
+        
       </li>
     </Link>
   );

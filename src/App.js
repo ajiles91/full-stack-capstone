@@ -23,14 +23,11 @@ export default class App extends Component {
   }
 
   ideaDataFromForm = data => {
-    
     // data.id = uuidv1();
     data.id = Math.floor(Math.random() * (30 - 11 + 1) + 11) 
-    data.claimed = false;
-    data.submitted = true;
     this.ideas.push(data);
     console.log(data)
-    // this.props.history.push("/");
+    
   };
 
   

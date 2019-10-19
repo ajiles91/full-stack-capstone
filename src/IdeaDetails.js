@@ -4,29 +4,24 @@ import FormContext from './FormContext'
 const IdeaDetails = (props) => {
     const ideasContext = React.useContext(FormContext);
     
-    let index = props.match.params.id - 1
-    // const data = props.dummyIdeas[index]
-    const data = ideasContext.ideas[index]
+    let id = props.match.params.id
+    const data = ideasContext.ideas.find((idea) => {
+        return idea.id === parseInt(id)
+    })
     const [claimed,setClaimed] = useState(data.claimed)
-    // const [claimed,setClaimed] = useState(context.claimed)
+  
    
     
-    console.log(props)
-    console.log(ideasContext.ideas[1].id)
-    console.log(data)
-    console.log(claimed)
-    console.log(data.claimed)
 
     const handleClaimedClick = () => {
         setClaimed(true)
-        ideasContext.ideas[index].claimed = true
-        // context.claimed = true
+        data.claimed = true
+        
     }
 
     const handleReleasedClick = () => {
         setClaimed(false)
-        ideasContext.ideas[index].claimed = false
-        // context.claimed = false
+        data.claimed = false
     
     }
 

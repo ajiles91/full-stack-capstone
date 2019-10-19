@@ -10,6 +10,7 @@ class CreateIdea extends Component {
     super(props);
 
     this.state = {
+      claimed: false,
       submitted: false,
       ideaName: "",
       ideaSummary: "",
