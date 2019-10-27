@@ -46,7 +46,7 @@ export default class App extends Component {
                 render={props => <IdeaDetails {...props} />}
               />
               <Route
-                path="/create-idea"
+                path="/idea"
                 render={props => (
                   <CreateIdea ideaDataFromForm={this.ideaDataFromForm} />
                 )}
