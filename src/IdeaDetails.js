@@ -11,19 +11,14 @@ const IdeaDetails = (props) => {
     })
     const [claimed,setClaimed] = useState(data.claimed)
   
-   
-    
-
     const handleClaimedClick = () => {
         setClaimed(true)
         data.claimed = true
-        
     }
 
     const handleReleasedClick = () => {
         setClaimed(false)
         data.claimed = false
-    
     }
 
     const claimedButton = claimed ? null : <button onClick={handleClaimedClick}> Claim Idea</button>
