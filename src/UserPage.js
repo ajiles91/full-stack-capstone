@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FormContext from "./FormContext";
+import config from './config'
 
 const UserPage = ({ dummyIdeas = [] }) => {
 
