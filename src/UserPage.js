@@ -71,4 +71,5 @@ const UserPage = ({ dummyIdeas = [] }) => {
     </div>
   );
 };
-default export UserPage;
+
+export default UserPage;
