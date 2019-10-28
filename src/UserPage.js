@@ -5,7 +5,7 @@ import FormContext from "./FormContext";
 const UserPage = ({ dummyIdeas = [] }) => {
 
   useEffect(() => {
-    fetch('${config.API_BASE_URL}')
+    fetch(`${config.API_BASE_URL}`)
     .then(response => response.json())
     .then(json => console.log(json))
 
