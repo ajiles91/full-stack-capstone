@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import FormContext from "./FormContext";
-// import './CreateIdea.css';
-// const uuidv1 = require('uuid/v1');
+
 
 class CreateIdea extends Component {
   static contextType = FormContext;
@@ -21,6 +20,8 @@ class CreateIdea extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+
+  
 
   handleChange(event) {
     const { name, value } = event.target;

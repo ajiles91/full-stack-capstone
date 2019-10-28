@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import UserPage from "./UserPage";
-// import Header from "./Header";
-// import IdeaList from './IdeaList';
 import CreateIdea from "./CreateIdea";
 import IdeaDetails from "./IdeaDetails";
 import dummyIdeas from "./dummyIdeas";
 import FormContext from "./FormContext";
-// const uuidv1 = require("uuid/v1");
+
 
 export default class App extends Component {
   constructor(props) {
@@ -23,8 +21,8 @@ export default class App extends Component {
   }
 
   ideaDataFromForm = data => {
-    // data.id = uuidv1();
-    data.id = Math.floor(Math.random() * (30 - 11 + 1) + 11) 
+   
+    // data.id = Math.floor(Math.random() * (30 - 11 + 1) + 11) 
     this.ideas.push(data);
     console.log(data)
     
@@ -40,7 +38,8 @@ export default class App extends Component {
           {/* <Header /> */}
           <BrowserRouter>
             <Switch>
-              <Route path="/" exact render={props => <UserPage />} />
+              <Route path="/" exact 
+              render={props => <UserPage />} />
               <Route
                 path="/idea/:id"
                 render={props => <IdeaDetails {...props} />}
