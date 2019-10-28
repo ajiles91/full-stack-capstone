@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FormContext from "./FormContext";
 
-export const UserPage = ({ dummyIdeas = [] }) => {
+const UserPage = ({ dummyIdeas = [] }) => {
 
   useEffect(() => {
     fetch('${config.API_BASE_URL}')
@@ -71,3 +71,4 @@ export const UserPage = ({ dummyIdeas = [] }) => {
     </div>
   );
 };
+default export UserPage;
