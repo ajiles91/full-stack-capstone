@@ -39,7 +39,7 @@ class CreateIdea extends Component {
       submitted: true
     });
     console.log(this.state);
-    this.props.ideaDataFromForm(this.state);
+    // this.props.ideaDataFromForm(this.state);
   }
 
   render() {

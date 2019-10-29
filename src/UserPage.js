@@ -6,8 +6,8 @@ import FormContext from "./FormContext";
 const UserPage = () => {
 
  const ideasCtx = React.useContext(FormContext);
-  if(!ideasCtx.ideasTest) {
-    return;
+ if(!(ideasCtx && ideasCtx.ideasTest)) {
+  return;
   }
   
   const linkMap = dummyIdea => (
@@ -20,7 +20,7 @@ const UserPage = () => {
     </Link>
   );
 
-  console.log(ideasCtx.ideasTest[0].ideaname)
+  console.log(ideasCtx.ideasTest[0].email)
   
 
   
