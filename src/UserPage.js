@@ -6,23 +6,29 @@ import FormContext from "./FormContext";
 const UserPage = ({ dummyIdeas = [] }) => {
 
  const ideasCtx = React.useContext(FormContext);
-
+  
   const linkMap = dummyIdea => (
     <Link to={`/idea/${dummyIdea.id}`}>
       <li>
+        {/* <span>{dummyIdea.ideaName}</span> */}
         <span>{dummyIdea.ideaName}</span>
         
       </li>
     </Link>
   );
 
-  console.log(ideasCtx)
+  console.log(ideasCtx.ideasTest.ideaname)
 
-  const claimed = ideasCtx.ideas.filter(idea => idea.claimed === true);
-  const unclaimed = ideasCtx.ideas.filter(idea => idea.claimed === false);
+  // const claimed = ideasCtx.ideas.filter(idea => idea.claimed === true);
+  // const unclaimed = ideasCtx.ideas.filter(idea => idea.claimed === false);
+  
+  const claimed = ideasCtx.ideasTest.filter(ideaTest => ideaTest.claimed === true);
+  const unclaimed = ideasCtx.ideasTest.filter(ideaTest => ideaTest.claimed === false);
 
-  const claimedList = claimed.map(linkMap);
-  const unclaimedList = unclaimed.map(linkMap);
+  console.log(claimed)
+  console.log(unclaimed)
+  // const claimedList = claimed.map(linkMap);
+  // const unclaimedList = unclaimed.map(linkMap);
 
   
 
@@ -51,12 +57,13 @@ const UserPage = ({ dummyIdeas = [] }) => {
       </section>
       <section>
         <h2>Claimed Ideas</h2>
-        <ul>{claimedList}</ul>
+        {/* <ul>{claimedList}</ul> */}
+        <p>list of claimed ideas</p>
 
         <h2>Unclaimed Ideas</h2>
         <ul>
-          {unclaimedList}
-          
+          {/* {unclaimedList} */}
+          <p>list of unclaimed ideas</p>
         </ul>
       </section>
     </div>

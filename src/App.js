@@ -38,14 +38,16 @@ export default class App extends Component {
     fetch(`${config.API_BASE_URL}`)
     .then(response => response.json())
     // .then(json => console.log(json[1].ideaname))
-    .then(json => this.setState({
+    .then(json => {
+      console.log('result:', json);
+
+      this.setState({
+        ideasTest: json
       
-      ideasTest: this.state.ideasTest.push(json)
-      
-    })
+      })
+      console.log(this.state.ideasTest[1].id)
+    } 
     )
-    console.log(this.state.ideasTest)
-    
   }
   
 
@@ -54,7 +56,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <FormContext.Provider value={{ ideas: this.ideas }}>
+        {/* <FormContext.Provider value={{ ideas: this.ideas }}> */}
+        <FormContext.Provider value={{ ideasTest: this.state.ideasTest}}>
           {/* <Header /> */}
           <BrowserRouter>
             <Switch>
