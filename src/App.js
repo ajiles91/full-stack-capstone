@@ -40,7 +40,7 @@ export default class App extends Component {
     // .then(json => console.log(json[1].ideaname))
     .then(json => this.setState({
       
-      ideasTest: JSON.this.state.ideasTest.push(json)
+      ideasTest: this.state.ideasTest.push(json)
       
     })
     )
