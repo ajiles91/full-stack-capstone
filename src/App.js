@@ -37,7 +37,7 @@ export default class App extends Component {
 
     fetch(`${config.API_BASE_URL}`)
     .then(response => response.json())
-    // .then(json => console.log(json[1].ideaname))
+    
     .then(json => {
       console.log('result:', json);
 

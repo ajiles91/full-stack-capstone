@@ -40,6 +40,18 @@ class CreateIdea extends Component {
     });
     console.log(this.state);
     // this.props.ideaDataFromForm(this.state);
+
+//     fetch(this.props.formAction, {
+//       headers: {
+//           'Accept': 'application/json',
+//           'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({description: this.state.description})
+//   });
+
+//   this.setState({description: ''});
+// }
+//   
   }
 
   render() {

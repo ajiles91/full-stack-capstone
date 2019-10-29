@@ -20,7 +20,7 @@ const UserPage = () => {
     </Link>
   );
 
-  console.log(ideasCtx.ideasTest[0].email)
+  console.log(ideasCtx.ideasTest[0] && ideasCtx.ideasTest[0].ideaname )
   
 
   
