@@ -11,25 +11,26 @@ const UserPage = () => {
   }
   
   const linkMap = dummyIdea => (
+    // for ()
     <Link to={`/idea/${dummyIdea.id}`}>
       <li>
-        {/* <span>{dummyIdea.ideaName}</span> */}
         <span>{dummyIdea.ideaName}</span>
+        {/* <span>{ideasCtx.ideasTest[0] && ideasCtx.ideasTest[0].ideaname}</span> */}
         
       </li>
     </Link>
   );
 
-  console.log(ideasCtx.ideasTest[0] && ideasCtx.ideasTest[0].ideaname )
-  
 
-  
+  console.log(ideasCtx.ideasTest[0] && ideasCtx.ideasTest[0].ideaname)
   
   const claimed = ideasCtx.ideasTest.filter(ideaTest => ideaTest.claimed === true);
   const unclaimed = ideasCtx.ideasTest.filter(ideaTest => ideaTest.claimed === false);
 
   console.log(claimed)
   console.log(unclaimed)
+  const claimedList = claimed.map(ideaTest => linkMap(ideaTest));
+  const unclaimedList = unclaimed.map(ideaTest => linkMap(ideaTest));
   // const claimedList = claimed.map(linkMap);
   // const unclaimedList = unclaimed.map(linkMap);
 
@@ -60,12 +61,12 @@ const UserPage = () => {
       </section>
       <section>
         <h2>Claimed Ideas</h2>
-        {/* <ul>{claimedList}</ul> */}
+        <ul>{claimedList}</ul>
         <p>list of claimed ideas</p>
 
         <h2>Unclaimed Ideas</h2>
         <ul>
-          {/* {unclaimedList} */}
+          {unclaimedList}
           <p>list of unclaimed ideas</p>
         </ul>
       </section>

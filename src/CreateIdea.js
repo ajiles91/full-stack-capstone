@@ -41,17 +41,27 @@ class CreateIdea extends Component {
     console.log(this.state);
     // this.props.ideaDataFromForm(this.state);
 
-//     fetch(this.props.formAction, {
-//       headers: {
-//           'Accept': 'application/json',
-//           'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({description: this.state.description})
-//   });
-
-//   this.setState({description: ''});
-// }
-//   
+    // fetch(‘https://jsonplaceholder.typicode.com/todos', {
+    // method: ‘POST’,
+    // body: JSON.stringify({
+    // userId: 1,
+    // title: “clean room”,
+    // completed: false
+    // }),
+    // headers: {
+    // “Content-type”: “application/json; charset=UTF-8”
+    // }
+    // })
+    // .then(response => response.json())
+    // .then(json => console.log(json))
+    // /* will return
+    // {
+    // “userId”: 1,
+    // “title”: “clean room”,
+    // “completed”: false,
+    // “id”: 201
+    // }
+    // */
   }
 
   render() {
