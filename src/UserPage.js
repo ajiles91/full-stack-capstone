@@ -1,53 +1,38 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import FormContext from "./FormContext";
-// import config from './config'
 
 const UserPage = () => {
 
  const ideasCtx = React.useContext(FormContext);
- if(!(ideasCtx && ideasCtx.ideasTest)) {
-  return;
-  }
   
-  const linkMap = dummyIdea => (
-    // for ()
-    <Link to={`/idea/${dummyIdea.id}`}>
+  const linkMap = idea => (
+    <Link to={`/idea/${idea.id}`}>
       <li>
-        <span>{dummyIdea.ideaName}</span>
-        {/* <span>{ideasCtx.ideasTest[0] && ideasCtx.ideasTest[0].ideaname}</span> */}
-        
+        <span>{idea.ideaname}</span>
       </li>
     </Link>
   );
-
-
-  console.log(ideasCtx.ideasTest[0] && ideasCtx.ideasTest[0].ideaname)
   
-  const claimed = ideasCtx.ideasTest.filter(ideaTest => ideaTest.claimed === true);
-  const unclaimed = ideasCtx.ideasTest.filter(ideaTest => ideaTest.claimed === false);
+  const claimed = ideasCtx.ideas.filter(idea => idea.claimed === true);
+  const unclaimed = ideasCtx.ideas.filter(idea => idea.claimed === false);
 
   console.log(claimed)
   console.log(unclaimed)
-  const claimedList = claimed.map(ideaTest => linkMap(ideaTest));
-  const unclaimedList = unclaimed.map(ideaTest => linkMap(ideaTest));
-  // const claimedList = claimed.map(linkMap);
-  // const unclaimedList = unclaimed.map(linkMap);
-
-  
+  const claimedList = claimed.map(idea => linkMap(idea));
+  const unclaimedList = unclaimed.map(idea => linkMap(idea));
 
   return (
     <div>
-
         <header>
             <h3>For Those Looking to Create...</h3>
             <h3>For Those That Are Full Of Ideas...</h3>
         </header>
         <p>
-            Have you ever felt that you have one (or a ton) of ideas but don't have the skills or time
-            to implement them?  You can put them up for someone to claim and you can collaborate with 
-            someone that wants to bring your idea to life! Do you enjoy building projects but run short of ideas?  
-            Do you just want to lend your skills to bring the next big idea to light?
+          Have you ever felt that you have one (or a ton) of ideas but don't have the skills or time
+          to implement them?  You can put them up for someone to claim and you can collaborate with 
+          someone that wants to bring your idea to life! Do you enjoy building projects but run short of ideas?  
+          Do you just want to lend your skills to bring the next big idea to light?
         </p>
       <section
         style={{
@@ -56,19 +41,14 @@ const UserPage = () => {
           justifyContent: "space-between"
         }}
       >
-      
-        <Link to="/create-idea">Create Idea</Link>
+      <Link to="/create-idea">Create Idea</Link>
       </section>
       <section>
         <h2>Claimed Ideas</h2>
         <ul>{claimedList}</ul>
-        <p>list of claimed ideas</p>
-
+    
         <h2>Unclaimed Ideas</h2>
-        <ul>
-          {unclaimedList}
-          <p>list of unclaimed ideas</p>
-        </ul>
+        <ul>{unclaimedList}</ul>
       </section>
     </div>
   );
