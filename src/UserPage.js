@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import FormContext from "./FormContext";
 // import config from './config'
 
-const UserPage = ({ dummyIdeas = [] }) => {
+const UserPage = () => {
 
  const ideasCtx = React.useContext(FormContext);
+  if(!ideasCtx.ideasTest) {
+    return;
+  }
   
   const linkMap = dummyIdea => (
     <Link to={`/idea/${dummyIdea.id}`}>
@@ -17,10 +20,10 @@ const UserPage = ({ dummyIdeas = [] }) => {
     </Link>
   );
 
-  console.log(ideasCtx.ideasTest.ideaname)
+  console.log(ideasCtx.ideasTest[0].ideaname)
+  
 
-  // const claimed = ideasCtx.ideas.filter(idea => idea.claimed === true);
-  // const unclaimed = ideasCtx.ideas.filter(idea => idea.claimed === false);
+  
   
   const claimed = ideasCtx.ideasTest.filter(ideaTest => ideaTest.claimed === true);
   const unclaimed = ideasCtx.ideasTest.filter(ideaTest => ideaTest.claimed === false);

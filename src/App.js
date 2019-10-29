@@ -54,7 +54,9 @@ export default class App extends Component {
   
 
   render() {
+    console.log(this.state.ideasTest)
     return (
+      
       <div>
         {/* <FormContext.Provider value={{ ideas: this.ideas }}> */}
         <FormContext.Provider value={{ ideasTest: this.state.ideasTest}}>
