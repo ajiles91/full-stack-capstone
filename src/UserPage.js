@@ -1,21 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import FormContext from "./FormContext";
-import config from './config'
+// import config from './config'
 
 const UserPage = ({ dummyIdeas = [] }) => {
 
-  useEffect(() => {
-    fetch(`${config.API_BASE_URL}`)
-    .then(response => response.json())
-    .then(json => console.log(json))
-
-  })
-
-  
-
-
-  const ideasCtx = React.useContext(FormContext);
+ const ideasCtx = React.useContext(FormContext);
 
   const linkMap = dummyIdea => (
     <Link to={`/idea/${dummyIdea.id}`}>

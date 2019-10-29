@@ -22,6 +22,19 @@ class CreateIdea extends Component {
   }
 
   
+  //   const url = 'http://localhost/test.htm';
+  //   const options = {
+  //   method: 'POST',
+  //   headers: {
+  //     'Accept': 'application/json',
+  //     'Content-Type': 'application/json;charset=UTF-8'
+  //   },
+  //   body: JSON.stringify({
+  //     a: 10,
+  //     b: 20
+  //   })
+  // };
+
 
   handleChange(event) {
     const { name, value } = event.target;
@@ -116,65 +129,6 @@ class CreateIdea extends Component {
 }
 CreateIdea.contextType = FormContext;
 export default CreateIdea;
-
-// import React from 'react';
-// import useForm from './CustomHooks'
-
-// // export const [ideaName, useIdeaName] = React.createContext(inputs.ideaName)
-// const CreateIdea = () => {
-
-//     const {inputs, handleChange, handleSubmit} = useForm();
-//     // const [ideaName, setIdeaName] = useState(inputs.ideaName)
-//     // const FormSubmit = React.createContext(state)
-
-//     return (
-//         <>
-//             <h2>Submit a new idea</h2>
-//             <form onSubmit={handleSubmit}>
-//                 <label htmlFor="idea-name">Idea Name</label>
-//                 <input
-//                     type="text"
-//                     value={inputs.ideaName}
-//                     onChange={handleChange}
-//                     name="ideaName"
-//                     required
-//                 />
-
-//                 <label htmlFor="idea-summary">Idea Summary</label>
-//                 <textarea
-//                     value={inputs.ideaSummary}
-//                     rows="10"
-//                     onChange={handleChange}
-//                     name="ideaSummary"
-//                     required
-//                 />
-
-//                 <label htmlFor="contact-info">Author Name</label>
-//                 <input
-//                     type="text"
-//                     name="authorName"
-//                     value={inputs.authorName}
-//                     onChange={handleChange}
-//                     required
-//                 />
-
-//                 <label htmlFor="contact-info">Email</label>
-//                 <input
-//                     type="email"
-//                     name="email"
-//                     value={inputs.email}
-//                     onChange={handleChange}
-//                     required
-//                 />
-
-//                 <button type='submit'>Add</button>
-//             </form>
-
-//         </>
-//     )
-// }
-
-// export default CreateIdea
 
 
 
