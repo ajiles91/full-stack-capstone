@@ -54,6 +54,7 @@ const IdeaDetails = (props) => {
         .then(json => console.log(json))
     }
     
+    
     const claimedButton = claimed ? null : <button onClick={handleClaimedClick}> Claim Idea</button>
     const releasedButton = (claimed === false )? null : <button onClick={handleReleasedClick}> Release Idea</button>
 

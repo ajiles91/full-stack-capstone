@@ -35,6 +35,7 @@ class CreateIdea extends Component {
     });
     console.log(this.state);
     
+    
     fetch(`${config.API_BASE_URL}/idea`, {
       method: 'POST',
       body: JSON.stringify({
