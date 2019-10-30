@@ -65,8 +65,8 @@ const IdeaDetails = (props) => {
        
     // }
     // 
-    const claimedButton = claimed ? null : <button onClick={handleClaimedClick}> Claim Idea</button>
-    const releasedButton = (claimed === false )? null : <button onClick={handleReleasedClick}> Release Idea</button>
+    // const claimedButton = claimed ? null : <button onClick={handleClaimedClick}> Claim Idea</button>
+    // const releasedButton = (claimed === false )? null : <button onClick={handleReleasedClick}> Release Idea</button>
 
 
    
