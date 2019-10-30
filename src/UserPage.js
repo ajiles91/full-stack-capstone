@@ -41,7 +41,7 @@ const UserPage = () => {
           justifyContent: "space-between"
         }}
       >
-      <Link to="/create-idea">Create Idea</Link>
+      <Link to="/idea">Create Idea</Link>
       </section>
       <section>
         <h2>Claimed Ideas</h2>
