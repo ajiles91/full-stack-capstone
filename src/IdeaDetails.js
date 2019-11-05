@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import config from './config'
 
 
@@ -7,6 +7,7 @@ import config from './config'
 const IdeaDetails = (props) => {
     const [claimed,setClaimed] = useState(false)
     const [data,setData] = useState({})
+    const [redirect,setRedirect] = useState(false)
     let id = props.match.params.id
          
     useEffect(() => {
@@ -36,6 +37,11 @@ const IdeaDetails = (props) => {
         })
         .then(response => response.json())
         .then(json => console.log(json))
+        // .then(json => {
+        //     console.log(json);
+        //     setRedirect(true)
+        // })
+        setRedirect(true)
 
     }
        
@@ -52,12 +58,19 @@ const IdeaDetails = (props) => {
         })
         .then(response => response.json())
         .then(json => console.log(json))
+        // .then(<Redirect to="/" />)
+        setRedirect(true)
     }
     
-    
+    console.log(redirect)
     const claimedButton = claimed ? null : <button onClick={handleClaimedClick}> Claim Idea</button>
     const releasedButton = (claimed === false )? null : <button onClick={handleReleasedClick}> Release Idea</button>
+    
+    
 
+    if (redirect === true) {
+        return <Redirect to="/" />;
+      }
     return (
         <>
             <p>Id: {data.id}</p>

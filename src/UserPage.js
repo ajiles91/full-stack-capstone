@@ -22,6 +22,8 @@ const UserPage = () => {
   const claimedList = claimed.map(idea => linkMap(idea));
   const unclaimedList = unclaimed.map(idea => linkMap(idea));
 
+  
+    
   return (
     <div>
         <header>
