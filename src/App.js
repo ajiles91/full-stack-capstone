@@ -27,7 +27,17 @@ export default class App extends Component {
      
     })
   }
-  
+  updateClaimedOnMainPage(){
+    fetch(`${config.API_BASE_URL}`)
+    .then(response => response.json())
+    .then(json => {
+      console.log('result:', json);
+      this.setState({
+        ideas: json
+      })
+     
+    })
+  }
   
   render() {
     return (
@@ -36,7 +46,9 @@ export default class App extends Component {
           <BrowserRouter>
             <Switch>
               <Route path="/" exact 
-              render={props => <UserPage />} />
+              render={props => (
+              <UserPage updateClaimedOnMainPage={this.updateClaimedOnMainPage}/>
+              )} />
               <Route
                 path="/idea/:id"
                 render={props => <IdeaDetails {...props} />}
