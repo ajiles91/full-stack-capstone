@@ -24,7 +24,7 @@ const IdeaDetails = (props) => {
         console.log({claimed})
     },[claimed])
     
-    const handleClaimedClick = (props) => {
+    const handleClaimedClick = (props, updateClaimedOnMainPage) => {
         setClaimed(true)
         fetch(`${config.API_BASE_URL}/idea/${id}`, {
             method: 'PATCH',
@@ -41,8 +41,9 @@ const IdeaDetails = (props) => {
         setRedirect(true)
 
     }
+
        
-    const handleReleasedClick = () => {
+    const handleReleasedClick = (props, updateClaimedOnMainPage) => {
         setClaimed(false)
         fetch(`${config.API_BASE_URL}/idea/${id}`, {
             method: 'PATCH',
@@ -55,7 +56,7 @@ const IdeaDetails = (props) => {
         })
         .then(response => response.json())
         .then(json => console.log(json))
-        updateClaimedOnMainPage(this.props)
+        updateClaimedOnMainPage()
         setRedirect(true)
     }
     

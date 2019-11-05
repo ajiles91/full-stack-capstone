@@ -51,7 +51,7 @@ export default class App extends Component {
               )} />
               <Route
                 path="/idea/:id"
-                render={props => <IdeaDetails {...props} />}
+                render={props => <IdeaDetails updateClaimedOnMainPage={this.updateClaimedOnMainPage} {...props} />}
               />
               <Route
                 path="/idea"
