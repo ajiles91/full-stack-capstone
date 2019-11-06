@@ -47,7 +47,7 @@ export default class App extends Component {
             <Switch>
               <Route path="/" exact 
               render={props => (
-              <UserPage updateClaimedOnMainPage={this.updateClaimedOnMainPage}/>
+              <UserPage updateClaimedOnMainPage={this.updateClaimedOnMainPage} {...props}/>
               )} />
               <Route
                 path="/idea/:id"

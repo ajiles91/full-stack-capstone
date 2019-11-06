@@ -8,6 +8,8 @@ const IdeaDetails = (props) => {
     const [claimed,setClaimed] = useState(false)
     const [data,setData] = useState({})
     const [redirect,setRedirect] = useState(false)
+    console.log(props)
+    // let id = props.params.id
     let id = props.match.params.id
          
     useEffect(() => {
@@ -24,7 +26,7 @@ const IdeaDetails = (props) => {
         console.log({claimed})
     },[claimed])
     
-    const handleClaimedClick = (props, updateClaimedOnMainPage) => {
+    const handleClaimedClick = ( props, ) => {
         setClaimed(true)
         fetch(`${config.API_BASE_URL}/idea/${id}`, {
             method: 'PATCH',
@@ -37,13 +39,13 @@ const IdeaDetails = (props) => {
         })
         .then(response => response.json())
         .then(json => console.log(json))
-        updateClaimedOnMainPage()
+        props.updateClaimedOnMainPage()
         setRedirect(true)
 
     }
 
        
-    const handleReleasedClick = (props, updateClaimedOnMainPage) => {
+    const handleReleasedClick = (props) => {
         setClaimed(false)
         fetch(`${config.API_BASE_URL}/idea/${id}`, {
             method: 'PATCH',
@@ -56,7 +58,7 @@ const IdeaDetails = (props) => {
         })
         .then(response => response.json())
         .then(json => console.log(json))
-        updateClaimedOnMainPage()
+        props.updateClaimedOnMainPage()
         setRedirect(true)
     }
     
