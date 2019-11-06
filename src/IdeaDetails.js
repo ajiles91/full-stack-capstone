@@ -26,7 +26,7 @@ const IdeaDetails = (props) => {
         console.log({claimed})
     },[claimed])
     
-    const handleClaimedClick = ( props, ) => {
+    const handleClaimedClick = () => {
         setClaimed(true)
         fetch(`${config.API_BASE_URL}/idea/${id}`, {
             method: 'PATCH',
@@ -45,7 +45,7 @@ const IdeaDetails = (props) => {
     }
 
        
-    const handleReleasedClick = (props) => {
+    const handleReleasedClick = () => {
         setClaimed(false)
         fetch(`${config.API_BASE_URL}/idea/${id}`, {
             method: 'PATCH',
