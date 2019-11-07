@@ -27,7 +27,7 @@ export default class App extends Component {
      
     })
   }
-  updateClaimedOnMainPage(){
+  updateClaimedOnMainPage= () => {
     fetch(`${config.API_BASE_URL}`)
     .then(response => response.json())
     .then(json => {
