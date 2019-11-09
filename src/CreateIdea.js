@@ -50,9 +50,10 @@ class CreateIdea extends Component {
         'Content-type': 'application/json; charset=UTF-8'
       }
     })
-    this.props.updateClaimedOnMainPage()
+    
     .then(response => response.json())
     .then(json => console.log(json))
+    .then(()=>this.props.updateClaimedOnMainPage())
   
   }
 

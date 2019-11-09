@@ -39,7 +39,7 @@ const IdeaDetails = (props) => {
         })
         .then(response => response.json())
         .then(json => console.log(json))
-        props.updateClaimedOnMainPage()
+        .then(() => props.updateClaimedOnMainPage())
         setRedirect(true)
 
     }
@@ -58,7 +58,7 @@ const IdeaDetails = (props) => {
         })
         .then(response => response.json())
         .then(json => console.log(json))
-        props.updateClaimedOnMainPage()
+        .then(()=>props.updateClaimedOnMainPage())
         setRedirect(true)
     }
     
