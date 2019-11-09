@@ -56,7 +56,7 @@ export default class App extends Component {
               <Route
                 path="/idea"
                 render={props => (
-                  <CreateIdea ideaDataFromForm={this.ideaDataFromForm} />
+                  <CreateIdea ideaDataFromForm={this.ideaDataFromForm} updateClaimedOnMainPage={this.updateClaimedOnMainPage} />
                 )}
               />
             </Switch>

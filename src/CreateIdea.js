@@ -28,7 +28,7 @@ class CreateIdea extends Component {
   }
 
   handleSubmit(event) {
-    alert(this.state.ideaName + ` was submitted`);
+    
     event.preventDefault();
     this.setState({
       submitted: true
@@ -50,6 +50,7 @@ class CreateIdea extends Component {
         'Content-type': 'application/json; charset=UTF-8'
       }
     })
+    this.props.updateClaimedOnMainPage()
     .then(response => response.json())
     .then(json => console.log(json))
   
