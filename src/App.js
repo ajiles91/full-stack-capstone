@@ -35,8 +35,8 @@ export default class App extends Component {
       this.setState({
         ideas: json
       })
-     
     })
+    console.log('the callback function ran')
   }
   
   render() {
