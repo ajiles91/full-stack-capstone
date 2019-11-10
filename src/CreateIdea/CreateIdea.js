@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import FormContext from "./FormContext";
-import config from './config'
+import FormContext from "../FormContext";
+import config from '../config'
+import './CreateIdea.css'
 
 
 class CreateIdea extends Component {
@@ -66,14 +67,13 @@ class CreateIdea extends Component {
     return (
       <div className="CreateIdeaApp">
         <main role="main">
-          <Link to="/">
-            <button> to idea page</button>
-          </Link>
+        
           <header>
-            <h1>New Idea</h1>
+            Marketplace Of Ideas
           </header>
 
           <section>
+          <h1>New Idea</h1>
             <form id="submit-idea" onSubmit={this.handleSubmit}>
               <div className="form-section">
                 <label htmlFor="idea-name">Idea Name</label>
@@ -118,12 +118,7 @@ class CreateIdea extends Component {
                   required
                 />
               </div>
-
               <button type="submit">Submit</button>
-
-              {/* <Link to ="/idea-list">
-                <button>to Idea List</button>
-              </Link> */}
             </form>
           </section>
         </main>

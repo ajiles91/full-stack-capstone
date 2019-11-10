@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FormContext from "./FormContext";
+import FormContext from "../FormContext";
+import './UserPage.css'
 
 const UserPage = () => {
 
@@ -25,11 +26,11 @@ const UserPage = () => {
   
     
   return (
-    <div>
+    <div className='whole-page'>
         <header>
-            <h3>For Those Looking to Create...</h3>
-            <h3>For Those That Are Full Of Ideas...</h3>
+          Marketplace of Ideas
         </header>
+        <h3>For Those Looking to Create And Those That Are Full Of Ideas...</h3>
         <p>
           Have you ever felt that you have one (or a ton) of ideas but don't have the skills or time
           to implement them?  You can put them up for someone to claim and you can collaborate with 
@@ -45,12 +46,17 @@ const UserPage = () => {
       >
       <Link to="/idea">Create Idea</Link>
       </section>
-      <section>
-        <h2>Claimed Ideas</h2>
-        <ul>{claimedList}</ul>
+      <section className='flex-container'>
+        <div className='list'>
+          <h2>Claimed Ideas</h2>
+          <ul>{claimedList}</ul>
+        </div>
     
-        <h2>Unclaimed Ideas</h2>
-        <ul>{unclaimedList}</ul>
+        <div className='list'>
+          <h2>Unclaimed Ideas</h2>
+          <ul>{unclaimedList}</ul>
+        </div>
+
       </section>
     </div>
   );

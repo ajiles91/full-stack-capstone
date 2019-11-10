@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from "react-router-dom";
-import config from './config'
+import config from '../config'
+import './IdeaDetails.css'
 
 
 
@@ -9,7 +10,6 @@ const IdeaDetails = (props) => {
     const [data,setData] = useState({})
     const [redirect,setRedirect] = useState(false)
     console.log(props)
-    // let id = props.params.id
     let id = props.match.params.id
          
     useEffect(() => {
@@ -20,12 +20,9 @@ const IdeaDetails = (props) => {
             setData(json)
             setClaimed(json.claimed)
         })
+         //  eslint-disable-next-line
     },[])
-
-    useEffect(() => {
-        console.log({claimed})
-    },[claimed])
-    
+   
     const handleClaimedClick = () => {
         setClaimed(true)
         fetch(`${config.API_BASE_URL}/idea/${id}`, {
@@ -73,6 +70,9 @@ const IdeaDetails = (props) => {
       }
     return (
         <>
+            <header>
+                Marketplace of Ideas
+            </header>
             <p>Id: {data.id}</p>
             <p>Name: {data.ideaname}</p>
             <p>Description: {data.ideasummary}</p>

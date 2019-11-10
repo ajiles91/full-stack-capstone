@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
-import UserPage from "./UserPage";
-import CreateIdea from "./CreateIdea";
-import IdeaDetails from "./IdeaDetails";
+import UserPage from "./UserPage/UserPage";
+import CreateIdea from "./CreateIdea/CreateIdea";
+import IdeaDetails from "./IdeaDetails/IdeaDetails";
 
 import FormContext from "./FormContext";
 import config from './config'
