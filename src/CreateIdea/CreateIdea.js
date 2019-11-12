@@ -65,60 +65,68 @@ class CreateIdea extends Component {
     }
 
     return (
-      <div className="CreateIdeaApp">
+      <div className="whole-page">
         <main role="main">
         
           <header>
             Marketplace Of Ideas
           </header>
 
-          <section>
-          <h1>New Idea</h1>
-            <form id="submit-idea" onSubmit={this.handleSubmit}>
-              <div className="form-section">
-                <label htmlFor="idea-name">Idea Name</label>
-                <input
-                  type="text"
-                  value={this.state.ideaName}
-                  onChange={this.handleChange}
-                  name="ideaName"
-                  required
-                />
-              </div>
+          <section className='whole-form'>
+          
+            <form className="submit-idea" onSubmit={this.handleSubmit}>
+              <formset>
+                <legend>
+                  Create a new idea here! Please provide as much information for your
+                  summary for collaborators know how to help you.
+                </legend>
+              
+                <div className="form-section">
+                  <label htmlFor="idea-name">Idea Name</label>
+                  <input
+                    type="text"
+                    value={this.state.ideaName}
+                    onChange={this.handleChange}
+                    name="ideaName"
+                    required
+                  />
+                </div>
 
-              <div className="form-section">
-                <label htmlFor="idea-summary">Idea Summary</label>
-                <textarea
-                  value={this.state.ideaSummary}
-                  rows="15"
-                  onChange={this.handleChange}
-                  name="ideaSummary"
-                  required
-                />
-              </div>
+                <div className="form-section">
+                  <label htmlFor="idea-summary">Idea Summary</label>
+                  <textarea
+                    value={this.state.ideaSummary}
+                    rows="15"
+                    cols="43"
+                    onChange={this.handleChange}
+                    name="ideaSummary"
+                    required
+                  />
+                </div>
 
-              <div className="author-name-container form-section">
-                <label htmlFor="contact-info">Author Name</label>
-                <input
-                  type="text"
-                  name="authorName"
-                  value={this.state.authorName}
-                  onChange={this.handleChange}
-                  required
-                />
-              </div>
+                <div className="author-name-container form-section">
+                  <label htmlFor="contact-info">Author Name</label>
+                  <input
+                    type="text"
+                    name="authorName"
+                    value={this.state.authorName}
+                    onChange={this.handleChange}
+                    required
+                  />
+                </div>
 
-              <div className="contact-info-container form-section">
-                <label htmlFor="contact-info">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleChange}
-                  required
-                />
-              </div>
-              <button type="submit">Submit</button>
+                <div className="contact-info-container form-section">
+                  <label htmlFor="contact-info">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                    required
+                  />
+                </div>
+                <button type="submit">Submit</button>
+              </formset>
             </form>
           </section>
         </main>

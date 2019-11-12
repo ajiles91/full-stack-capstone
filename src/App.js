@@ -7,6 +7,8 @@ import IdeaDetails from "./IdeaDetails/IdeaDetails";
 import FormContext from "./FormContext";
 import config from './config'
 
+// import disabledLink from "../../../public/styles/disabledLink";
+//
 
 export default class App extends Component {
   constructor(props) {

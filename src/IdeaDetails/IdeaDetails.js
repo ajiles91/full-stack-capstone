@@ -69,7 +69,7 @@ const IdeaDetails = (props) => {
         return <Redirect to="/" />;
       }
     return (
-        <>
+        <div className='whole-page'>
             <header>
                 Marketplace of Ideas
             </header>
@@ -88,7 +88,7 @@ const IdeaDetails = (props) => {
                      to idea list
                 </button>
             </Link>
-        </>
+        </div>
 
     )
 }
