@@ -70,25 +70,42 @@ const IdeaDetails = (props) => {
       }
     return (
         <div className='whole-page'>
-            <header>
-                Marketplace of Ideas
-            </header>
-            <p>Id: {data.id}</p>
-            <p>Name: {data.ideaname}</p>
-            <p>Description: {data.ideasummary}</p>
-            <p>Status: {claimed ? 'claimed': 'unclaimed'}</p>
-            <a href={`mailto:${data.email}`} rel="noopener noreferrer" target="_blank" className='button-border'>
-                <span className='button-inner'>Contact Author</span>
-            </a>
+            <section className="idea-details">
+                <p>Id: {data.id}</p>
+                <p>Name: {data.ideaname}</p>
+                <p>Description: {data.ideasummary}</p>
+                <p>Status: {claimed ? 'claimed': 'unclaimed'}</p>
 
-           {claimedButton}
-           {releasedButton}
-        <Link to='/'>
-                <button>
-                     to idea list
-                </button>
-            </Link>
+                 {/* <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <table cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="button” bgcolor="#ED2939">
+                                        <a  class="link" href="https://www.copernica.com" target="_blank">
+                                            Click             
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table> */}
+
+                <a href={`mailto:${data.email}`} rel="noopener noreferrer" target="_blank" className='button-border'>
+                    <span className='button-inner'>Contact Author</span>
+                </a>
+
+                {claimedButton}
+                {releasedButton}
+                <Link to='/'>
+                    <button>Back To Idea List</button>
+                </Link>
+            </section>
         </div>
+
+        
+
 
     )
 }

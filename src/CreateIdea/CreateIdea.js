@@ -75,13 +75,13 @@ class CreateIdea extends Component {
           <section className='whole-form'>
           
             <form className="submit-idea" onSubmit={this.handleSubmit}>
-              <formset>
+              
                 <legend>
                   Create a new idea here! Please provide as much information for your
                   summary for collaborators know how to help you.
                 </legend>
               
-                <div className="form-section">
+                <div>
                   <label htmlFor="idea-name">Idea Name</label>
                   <input
                     type="text"
@@ -92,7 +92,7 @@ class CreateIdea extends Component {
                   />
                 </div>
 
-                <div className="form-section">
+                <div>
                   <label htmlFor="idea-summary">Idea Summary</label>
                   <textarea
                     value={this.state.ideaSummary}
@@ -104,7 +104,7 @@ class CreateIdea extends Component {
                   />
                 </div>
 
-                <div className="author-name-container form-section">
+                <div className="author-name-container">
                   <label htmlFor="contact-info">Author Name</label>
                   <input
                     type="text"
@@ -115,7 +115,7 @@ class CreateIdea extends Component {
                   />
                 </div>
 
-                <div className="contact-info-container form-section">
+                <div className="contact-info-container">
                   <label htmlFor="contact-info">Email</label>
                   <input
                     type="email"
@@ -125,8 +125,12 @@ class CreateIdea extends Component {
                     required
                   />
                 </div>
-                <button type="submit">Submit</button>
-              </formset>
+                <div className='button-wrapper'>
+                  <button type="submit">Submit</button>
+
+                </div>
+                
+              
             </form>
           </section>
         </main>

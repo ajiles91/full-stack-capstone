@@ -27,8 +27,9 @@ const UserPage = () => {
     
   return (
     <div className='whole-page'>
+      <section className='top-section'>
         <header>
-          Marketplace of Ideas
+          <h1>Marketplace of Ideas</h1>
         </header>
         <h3>For Those Looking to Create And Those That Are Full Of Ideas...</h3>
         <p>
@@ -37,22 +38,18 @@ const UserPage = () => {
           someone that wants to bring your idea to life! Do you enjoy building projects but run short of ideas?  
           Do you just want to lend your skills to bring the next big idea to light?
         </p>
-      <section
-        style={{
-          width: "200px",
-          display: "flex",
-          justifyContent: "space-between"
-        }}
-      >
-      <Link to="/idea">Create Idea</Link>
+        <Link to="/idea">
+          <button>Create Idea</button>
+          </Link>
       </section>
+     
       <section className='flex-container'>
-        <div className='list'>
+        <div className='claimed-list'>
           <h2>Claimed Ideas</h2>
           <ul>{claimedList}</ul>
         </div>
     
-        <div className='list'>
+        <div className='unclaimed-list'>
           <h2>Unclaimed Ideas</h2>
           <ul>{unclaimedList}</ul>
         </div>
