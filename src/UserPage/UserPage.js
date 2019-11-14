@@ -43,7 +43,7 @@ const UserPage = () => {
           </Link>
       </section>
      
-      <section className='flex-container'>
+      <section className='bottom-section'>
         <div className='claimed-list'>
           <h2>Claimed Ideas</h2>
           <ul>{claimedList}</ul>

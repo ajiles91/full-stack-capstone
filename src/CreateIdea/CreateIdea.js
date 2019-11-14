@@ -66,13 +66,7 @@ class CreateIdea extends Component {
 
     return (
       <div className="whole-page">
-        <main role="main">
-        
-          <header>
-            Marketplace Of Ideas
-          </header>
-
-          <section className='whole-form'>
+        <section className='whole-form'>
           
             <form className="submit-idea" onSubmit={this.handleSubmit}>
               
@@ -133,7 +127,7 @@ class CreateIdea extends Component {
               
             </form>
           </section>
-        </main>
+        
       </div>
     );
   }

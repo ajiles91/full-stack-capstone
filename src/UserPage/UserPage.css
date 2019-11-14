@@ -1,3 +1,11 @@
+.whole-page {
+  background-image: url("./../images/light-bulb-background.jpg");
+  background-size: auto;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+}
+
 button{
   height: 25px;
   width: 150px;
@@ -20,7 +28,7 @@ h2 {
 p{
   font-family: 'Raleway', sans-serif;
 }
-.flex-container {
+.bottom-section {
   display: flex;
   justify-content: space-around;  
 }
@@ -45,10 +53,4 @@ p{
 .claimed-list{
   margin-right: 10px;
 
-}
-.whole-page {
-  background-image: url("./../images/light-bulb-background.jpg");
-  background-size: auto;
-  min-height: 100vh;
-  min-width: 100vw;
 }

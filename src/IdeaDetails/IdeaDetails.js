@@ -92,7 +92,7 @@ const IdeaDetails = (props) => {
                     </tr>
                 </table> */}
 
-                <a href={`mailto:${data.email}`} rel="noopener noreferrer" target="_blank" className='button-border'>
+                <a className='link-as-button' href={`mailto:${data.email}`} rel='noopener noreferrer' target="_blank" className='button-border'>
                     <span className='button-inner'>Contact Author</span>
                 </a>
 
@@ -103,7 +103,6 @@ const IdeaDetails = (props) => {
                 </Link>
             </section>
         </div>
-
         
 
 

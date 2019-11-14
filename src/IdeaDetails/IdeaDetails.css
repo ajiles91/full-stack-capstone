@@ -1,10 +1,11 @@
-
-
 .whole-page {
   background-image: url("./../images/light-bulb-background.jpg");
   background-size: auto;
   min-height: 100vh;
   min-width: 100vw;
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
 }
 
 .idea-details{
@@ -18,4 +19,11 @@
   flex-direction: column;
   text-align: center;
   margin: 10% 0;
+}
+
+.link-as-button {
+  background-color: red;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none
 }
