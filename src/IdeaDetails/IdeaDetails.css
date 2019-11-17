@@ -22,8 +22,22 @@
 }
 
 .link-as-button {
-  background-color: red;
-  color: white;
+  background-color:  #eee;;
+  color: black;
   padding: 1em 1.5em;
-  text-decoration: none
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px black;
+  font-size: 20px;
+  height: 15px;
+  width: 100px;
+  text-align: center;
+  font: 20px Arial
+}
+.button-section {
+  display: flex;
+  justify-content: space-around;
+}
+.idea-details-buttons {
+  height: 60px;
 }

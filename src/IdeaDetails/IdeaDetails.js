@@ -60,8 +60,8 @@ const IdeaDetails = (props) => {
     }
     
     console.log(redirect)
-    const claimedButton = claimed ? null : <button onClick={handleClaimedClick}> Claim Idea</button>
-    const releasedButton = (claimed === false )? null : <button onClick={handleReleasedClick}> Release Idea</button>
+    const claimedButton = claimed ? null : <button className='idea-details-buttons' onClick={handleClaimedClick}> Claim Idea</button>
+    const releasedButton = (claimed === false )? null : <button className='idea-details-buttons' onClick={handleReleasedClick}> Release Idea</button>
     
     
 
@@ -76,31 +76,20 @@ const IdeaDetails = (props) => {
                 <p>Description: {data.ideasummary}</p>
                 <p>Status: {claimed ? 'claimed': 'unclaimed'}</p>
 
-                 {/* <table width="100%" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td>
-                            <table cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <td class="button” bgcolor="#ED2939">
-                                        <a  class="link" href="https://www.copernica.com" target="_blank">
-                                            Click             
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table> */}
+                 
+                <div className='button-section'>
 
-                <a className='link-as-button' href={`mailto:${data.email}`} rel='noopener noreferrer' target="_blank" className='button-border'>
-                    <span className='button-inner'>Contact Author</span>
-                </a>
+                    <a className='link-as-button button-border' href={`mailto:${data.email}`} rel='noopener noreferrer' target="_blank">
+                        {/* <span className='button-inner'>Contact Author</span> */}
+                        Contact Author
+                    </a>
 
-                {claimedButton}
-                {releasedButton}
-                <Link to='/'>
-                    <button>Back To Idea List</button>
-                </Link>
+                    {claimedButton}
+                    {releasedButton}
+                    <Link to='/'>
+                        <button>Back To Idea List</button>
+                    </Link>
+                </div>    
             </section>
         </div>
         

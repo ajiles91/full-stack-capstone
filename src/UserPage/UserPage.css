@@ -4,11 +4,12 @@
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
+  flex-direction: column;
 }
 
 button{
   height: 25px;
-  width: 150px;
+  width: 200px;
   background: #eee;
   border: 0px;
   border-radius: 5px;
@@ -30,9 +31,10 @@ p{
 }
 .bottom-section {
   display: flex;
-  justify-content: space-around;  
+  justify-content: space-around;
+  
 }
-.top-section{
+.top-section {
   margin-bottom: 10px;
   background-color: rgba(240, 240, 136, 0.6); 
   /* background-color: rgba(255, 255, 255, 0.7); */
