@@ -54,5 +54,17 @@ p{
 }
 .claimed-list{
   margin-right: 10px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width:400px){
+  .bottom-section {
+    display: flex;
+    flex-direction:column;
+  }
+  .claimed-list{
+    margin-bottom:10px; 
+  }
 
 }
