@@ -21,13 +21,17 @@ h1 {
   /* font-family: 'Alfa Slab One', cursive; */
   font-family: 'Unica One', cursive;
   font-size: 60px;
+  word-wrap: break-word; 
 }
 
 h2 {
   font-family: 'Unica One', cursive;
+  word-wrap: break-word; 
+
 }
 p{
   font-family: 'Raleway', sans-serif;
+  word-wrap: break-word; 
 }
 .bottom-section {
   display: flex;
@@ -51,9 +55,11 @@ p{
   padding:30px 15px;
   background-color: rgba(240, 239, 195, 0.6);
   border-radius: 10px;
+  word-wrap: break-word; 
 }
 .claimed-list{
   margin-right: 10px;
+  word-wrap: break-word; 
 }
 
 /* Media Queries */
@@ -67,4 +73,4 @@ p{
     margin-bottom:10px; 
   }
 
-}
+}  

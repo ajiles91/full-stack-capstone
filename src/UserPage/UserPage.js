@@ -9,7 +9,7 @@ const UserPage = () => {
   
   const linkMap = idea => (
     <Link to={`/idea/${idea.id}`}>
-      <li>
+      <li key='1'>
         <span>{idea.ideaname}</span>
       </li>
     </Link>
