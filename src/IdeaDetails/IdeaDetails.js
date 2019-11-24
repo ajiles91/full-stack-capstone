@@ -9,14 +9,13 @@ const IdeaDetails = (props) => {
     const [claimed,setClaimed] = useState(false)
     const [data,setData] = useState({})
     const [redirect,setRedirect] = useState(false)
-    console.log(props)
     let id = props.match.params.id
          
     useEffect(() => {
         fetch(`${config.API_BASE_URL}/idea/${id}`)
         .then(response => response.json())
         .then(json => {
-        console.log('result:', json);
+    
             setData(json)
             setClaimed(json.claimed)
         })
@@ -59,7 +58,6 @@ const IdeaDetails = (props) => {
         setRedirect(true)
     }
     
-    console.log(redirect)
     const claimedButton = claimed ? null : <button className='idea-details-buttons' onClick={handleClaimedClick}> Claim Idea</button>
     const releasedButton = (claimed === false )? null : <button className='idea-details-buttons' onClick={handleReleasedClick}> Release Idea</button>
     

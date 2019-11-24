@@ -34,7 +34,7 @@ class CreateIdea extends Component {
     this.setState({
       submitted: true
     });
-    console.log(this.state);
+    
     
     
     fetch(`${config.API_BASE_URL}/idea`, {
@@ -59,7 +59,6 @@ class CreateIdea extends Component {
   }
 
   render() {
-    console.log(this.state.submitted);
     if (this.state.submitted === true) {
       return <Redirect to="/" />;
     }

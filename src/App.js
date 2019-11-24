@@ -19,7 +19,7 @@ export default class App extends Component {
     fetch(`${config.API_BASE_URL}`)
     .then(response => response.json())
     .then(json => {
-      console.log('result:', json);
+
       this.setState({
         ideas: json
       })
@@ -31,12 +31,10 @@ export default class App extends Component {
     fetch(`${config.API_BASE_URL}`)
     .then(response => response.json())
     .then(json => {
-      console.log('result:', json);
       this.setState({
         ideas: json
       })
     })
-    console.log('the callback function ran')
   }
   
   render() {

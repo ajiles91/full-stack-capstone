@@ -18,8 +18,6 @@ const UserPage = () => {
   const claimed = ideasCtx.ideas.filter(idea => idea.claimed === true);
   const unclaimed = ideasCtx.ideas.filter(idea => idea.claimed === false);
 
-  console.log(claimed)
-  console.log(unclaimed)
   const claimedList = claimed.map(idea => linkMap(idea));
   const unclaimedList = unclaimed.map(idea => linkMap(idea));
 
