@@ -1,43 +1,56 @@
-## Marketplace of Ideas
-Live Link: https://marketplace-of-ideas.ajiles91.now.sh 
+# Marketplace of Ideas
+Have you ever felt that you have one (or a ton) of ideas but don't have the skills or time to implement them?  With Marketplace of Ideas, you can put them up for someone to claim and you can collaborate with someone that wants to bring your idea to life! Also, do you enjoy building projects but run short of ideas? You can find them here!
 
-## Available Scripts
+# Important Links:
+Live Link: https://marketplace-of-ideas.ajiles91.now.sh
+API Repo Link: https://github.com/ajiles91/marketplace-of-ideas-api
 
-In the project directory, you can run:
+# Technologies Used:
+HTML, CSS, React.js, Node.js, Express.js, PostgreSQL, SQL
 
-### `npm start`
+# Screenshots
+![marketplace-of-ideas-main-page](screenshots/marketplace-of-ideas-create-idea.jpg)
+![marketplace-of-ideas-idea-details](screenshots/marketplace-of-ideas-idea-details.jpg)
+![marketplace-of-ideas-create-idea](screenshots/marketplace-of-ideas-create-idea.jpg)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# API Documentation
+There is a backend database that manages the ideas that are submitted, claimed and released by users.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## GET /api Endpoint
+-endpoint returns all of the ideas in the database so the name of each idea can be displayed on the main page
+-ideas are stored as an array of objects; each object has a key-value pair of:
+    -id:12 (number, generated when posted in database)
+    -ideaName: Title of Idea or Task (string)
+    -ideaSummary: a short summary of the user's idea (string)
+    -authorName: name of user (string)
+    -email: email of user (string)
+    -claimed: claimed is true and unclaimed is false; default is false(boolean)
+    -submitted: defaults as false flips to true when user submits idea on create idea page(boolean)
 
-### `npm test`
+## GET /api/idea/:id Endpoint
+-endpoint returns the object of the single idea clicked on by the user so the ideas details can be displayed on page
+-ideas are stored as an array of objects; each object has a key-value pair of:
+    -id:12 (number, generated when posted in database)
+    -ideaName: Title of Idea or Task (string)
+    -ideaSummary: a short summary of the user's idea (string)
+    -authorName: name of user (string)
+    -email: email of user (string)
+    -claimed: claimed is true and unclaimed is false; default is false(boolean)
+    -submitted: defaults as false flips to true when user submits idea on create idea page(boolean)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## PATCH /api/idea/:id Endpoint
+-endpoint for PATCH request triggered when a user clicks on the "claim idea" or "release idea" button
+-when user clicks claim idea button the POST request flips the claimed value from false to true
+-when user clicks release idea button the POST request flips the claimed value from true to false 
 
-### `npm run build`
+## POST /api/idea Endpoint
+-POST request to endpoint allows user to create idea and post it to the database, user submits a name for the idea,a summary of the idea, the user's name and their email
+-object created and added to array:
+    -id:12 (number, generated when posted in database)
+    -ideaName: Title of Idea or Task (string)
+    -ideaSummary: a short summary of the user's idea (string)
+    -authorName: name of user (string)
+    -email: email of user (string)
+    -claimed: claimed is true and unclaimed is false; default is false(boolean)
+    -submitted: defaults as false flips to true when user submits idea on create idea page(boolean)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
