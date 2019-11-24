@@ -53,4 +53,3 @@ There is a backend database that manages the ideas that are submitted, claimed a
     -email: email of user (string)
     -claimed: claimed is true and unclaimed is false; default is false(boolean)
     -submitted: defaults as false flips to true when user submits idea on create idea page(boolean)
-
