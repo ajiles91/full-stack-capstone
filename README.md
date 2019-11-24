@@ -2,7 +2,7 @@
 Have you ever felt that you have one (or a ton) of ideas but don't have the skills or time to implement them?  With Marketplace of Ideas, you can put them up for someone to claim and you can collaborate with someone that wants to bring your idea to life! Also, do you enjoy building projects but run short of ideas? You can find them here!
 
 # Important Links:
-Live Link: https://marketplace-of-ideas.ajiles91.now.sh
+Live Link: https://jiles-marketplace-of-ideas.now.sh/
 API Repo Link: https://github.com/ajiles91/marketplace-of-ideas-api
 
 # Technologies Used:
