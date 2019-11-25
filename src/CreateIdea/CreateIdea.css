@@ -43,6 +43,7 @@ textarea {
   width: 75%;
   border-radius: 20px; 
   font-size: 4vh;
+  overflow-wrap: break-word;
 }
 
 .button-wrapper{
