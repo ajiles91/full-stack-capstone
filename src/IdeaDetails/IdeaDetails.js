@@ -60,8 +60,6 @@ const IdeaDetails = (props) => {
     
     const claimedButton = claimed ? null : <button className='idea-details-buttons' onClick={handleClaimedClick}> Claim Idea</button>
     const releasedButton = (claimed === false )? null : <button className='idea-details-buttons' onClick={handleReleasedClick}> Release Idea</button>
-    
-    
 
     if (redirect === true) {
         return <Redirect to="/" />;
@@ -90,9 +88,6 @@ const IdeaDetails = (props) => {
                 </div>    
             </section>
         </div>
-        
-
-
     )
 }
 

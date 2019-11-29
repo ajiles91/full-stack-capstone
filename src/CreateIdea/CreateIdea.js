@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, BrowserRouter } from "react-router-dom";
 import FormContext from "../FormContext";
 import config from '../config'
 import './CreateIdea.css'
@@ -120,7 +120,12 @@ class CreateIdea extends Component {
                 </div>
                 <div className='button-wrapper'>
                   <button type="submit">Submit</button>
-
+                  <BrowserRouter>
+                    <Link to='/'>
+                      <button>Back To Idea List</button>
+                    </Link>
+                  </BrowserRouter>
+                  
                 </div>
                 
               
