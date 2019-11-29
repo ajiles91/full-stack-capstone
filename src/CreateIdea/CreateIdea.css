@@ -32,9 +32,6 @@ textarea {
   display: block;
 }
 
-/* .submit-idea button,
-.submit-idea label */
-
 .submit-idea legend{
   background-color: rgba(240, 240, 136, 0.6);
   display: block;
@@ -47,12 +44,12 @@ textarea {
 }
 
 .button-wrapper{
-  width: 100%;
+  width: 80%;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
+  margin: 15px auto 0 auto;
 }
 
 button {

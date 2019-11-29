@@ -83,7 +83,7 @@ const IdeaDetails = (props) => {
                     {claimedButton}
                     {releasedButton}
                     <Link to='/'>
-                        <button>Back To Idea List</button>
+                        <i>Back To Idea List</i>
                     </Link>
                 </div>    
             </section>

@@ -29,7 +29,7 @@ h2 {
   word-wrap: break-word; 
 
 }
-p{
+p {
   font-family: 'Raleway', sans-serif;
   word-wrap: break-word; 
 }
@@ -38,10 +38,13 @@ p{
   justify-content: space-around;
   
 }
+
+.create-idea-button {
+  margin: 0 auto
+}
 .top-section {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background-color: rgba(240, 240, 136, 0.6); 
-  /* background-color: rgba(255, 255, 255, 0.7); */
   padding: 30px;
   border-radius: 10px;
   width: 100%; 
@@ -51,7 +54,7 @@ p{
 }
 .top-and-bottom{
   width:80%;
-  margin: 15px auto 0 auto;
+  margin: 15px auto 15px auto;
 }
 .claimed-list,
 .unclaimed-list {
@@ -59,7 +62,8 @@ p{
   padding:30px 15px;
   background-color: rgba(240, 239, 195, 0.6);
   border-radius: 10px;
-  word-wrap: break-word; 
+  word-wrap: break-word;
+  width: 50%;
 }
 .claimed-list{
   margin-right: 10px;
@@ -68,13 +72,18 @@ p{
 
 /* Media Queries */
 
-@media screen and (max-width:400px){
+@media screen and (max-width:420px){
   .bottom-section {
     display: flex;
     flex-direction:column;
   }
   .claimed-list{
-    margin-bottom:10px; 
+    margin-bottom:20px; 
+  }
+
+  .claimed-list,
+  .unclaimed-list {
+    width: 100%;
   }
 
 }  

@@ -38,7 +38,7 @@ const UserPage = () => {
             Do you just want to lend your skills to bring the next big idea to light?
           </p>
           <Link to="/idea">
-            <button>Create Idea</button>
+            <button className='create-idea-button'>Create Idea</button>
             </Link>
         </section>
       
