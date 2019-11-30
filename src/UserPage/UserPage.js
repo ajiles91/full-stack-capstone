@@ -6,7 +6,7 @@ import './UserPage.css'
 const UserPage = (props) => {
 
 //  const ideasCtx = React.useContext(FormContext);
- const { ideasCtx = [] } = React.useContext(FormContext);
+ const { ideas = [] } = React.useContext(FormContext);
   const linkMap = idea => (
     <Link to={`/idea/${idea.id}`}>
       <li key={idea.id}>
@@ -15,8 +15,11 @@ const UserPage = (props) => {
     </Link>
   );
   
-  const claimed = ideasCtx.ideas.filter(idea => idea.claimed === true);
-  const unclaimed = ideasCtx.ideas.filter(idea => idea.claimed === false);
+  // const claimed = ideasCtx.ideas.filter(idea => idea.claimed === true);
+  // const unclaimed = ideasCtx.ideas.filter(idea => idea.claimed === false);
+
+   const claimed = ideas.filter(idea => idea.claimed === true);
+   const unclaimed = ideas.filter(idea => idea.claimed === false);
 
   const claimedList = claimed.map(idea => linkMap(idea));
   const unclaimedList = unclaimed.map(idea => linkMap(idea));

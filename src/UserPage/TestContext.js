@@ -1,4 +1,7 @@
-const FormContext = React.createContext({
+import React from 'react'
+
+
+const TextContext = React.createContext({
     ideas:
 [{
   id: 1, 
