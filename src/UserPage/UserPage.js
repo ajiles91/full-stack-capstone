@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import FormContext from "../FormContext";
 import './UserPage.css'
 
-const UserPage = () => {
+const UserPage = (props) => {
 
  const ideasCtx = React.useContext(FormContext);
   
