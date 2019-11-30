@@ -6,9 +6,11 @@ import TestContext from './TestContext'
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(<TestContext.Provider value={{ ideas: ideas}}>
+  ReactDOM.render(
+  <TestContext.Provider value={{ ideas: []}}>
     <UserPage />
-  </TestContext.Provider>, div);
+  </TestContext.Provider>
+  , div);
 
   ReactDOM.unmountComponentAtNode(div);
 });
