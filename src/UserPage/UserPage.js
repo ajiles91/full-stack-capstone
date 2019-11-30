@@ -6,7 +6,7 @@ import './UserPage.css'
 const UserPage = (props) => {
 
 //  const ideasCtx = React.useContext(FormContext);
- const { ideas = [] } = React.useContext(FormContext);
+ const { ideasCtx = [] } = React.useContext(FormContext);
   const linkMap = idea => (
     <Link to={`/idea/${idea.id}`}>
       <li key={idea.id}>
