@@ -38,7 +38,7 @@
   display: flex;
   justify-content: space-around;
   width:80%;
-  margin: 15px auto 0 auto;
+  margin: 15px auto 10px;
 }
 .idea-details-buttons {
   height: 60px;

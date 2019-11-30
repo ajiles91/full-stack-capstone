@@ -61,6 +61,7 @@ const IdeaDetails = (props) => {
     const claimedButton = claimed ? null : <button className='idea-details-buttons' onClick={handleClaimedClick}> Claim Idea</button>
     const releasedButton = (claimed === false )? null : <button className='idea-details-buttons' onClick={handleReleasedClick}> Release Idea</button>
 
+
     if (redirect === true) {
         return <Redirect to="/" />;
       }
@@ -74,16 +75,14 @@ const IdeaDetails = (props) => {
 
                  
                 <div className='button-section'>
-
                     <a className='link-as-button button-border' href={`mailto:${data.email}`} rel='noopener noreferrer' target="_blank">
-                        {/* <span className='button-inner'>Contact Author</span> */}
                         Contact Author
                     </a>
 
                     {claimedButton}
                     {releasedButton}
                     <Link to='/'>
-                        <i>Back To Idea List</i>
+                        <button>Back To Idea List</button>
                     </Link>
                 </div>    
             </section>
