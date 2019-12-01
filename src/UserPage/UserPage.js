@@ -40,11 +40,11 @@ const UserPage = (props) => {
             someone that wants to bring your idea to life! Do you enjoy building projects but run short of ideas?  
             Do you just want to lend your skills to bring the next big idea to light?
           </p>
-          <BrowserRouter>
-            <Link to="/idea">
-              <button className='create-idea-button'>Create Idea</button>
-            </Link>
-          </BrowserRouter>
+          
+          <Link to="/idea">
+            <button className='create-idea-button'>Create Idea</button>
+          </Link>
+        
           
         </section>
       

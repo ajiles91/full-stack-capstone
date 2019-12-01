@@ -5,6 +5,12 @@ import IdeaDetails from './IdeaDetails';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<IdeaDetails />, div);
+  ReactDOM.render(
+    <BrowserRouter>
+      <IdeaDetails />
+    </BrowserRouter>
+  
+  
+  , div);
   ReactDOM.unmountComponentAtNode(div);
 });

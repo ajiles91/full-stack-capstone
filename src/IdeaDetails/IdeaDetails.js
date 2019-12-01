@@ -9,7 +9,7 @@ const IdeaDetails = (props) => {
     const [claimed,setClaimed] = useState(false)
     const [data,setData] = useState({})
     const [redirect,setRedirect] = useState(false)
-    let id = props.match.params.id
+    let id = props.match ? props.match.params.id : "";
          
     useEffect(() => {
         fetch(`${config.API_BASE_URL}/idea/${id}`)
