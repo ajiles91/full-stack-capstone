@@ -12,9 +12,9 @@
   },
   "scripts": {
     "start": "vercel start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build": "vercel build",
+    "test": "vercel test",
+    "eject": "vercel eject",
     "predeploy": "npm run vercel-build",
     "deploy": "now ./build",
     "postdeploy": "now alias -A ./build/now.json"
