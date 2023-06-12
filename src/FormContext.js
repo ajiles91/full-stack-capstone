@@ -8,3 +8,4 @@ const FormContext = React.createContext({
     isClaimed: false
     //how to get info submitted from createIdea component in here
 });
+export default FormContext;
