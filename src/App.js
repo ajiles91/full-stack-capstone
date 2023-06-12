@@ -14,39 +14,37 @@ export default class App extends Component {
       ideas: [],
     }
   }
- 
-  componentDidMount(){
-    fetch(`${config.API_BASE_URL}`)
-    .then(response => response.json())
-    .then(json => {
 
-      this.setState({
-        ideas: json
-      })
-     
-    })
-  }
-  
-  updateClaimedOnMainPage= () => {
+  componentDidMount() {
     fetch(`${config.API_BASE_URL}`)
-    .then(response => response.json())
-    .then(json => {
-      this.setState({
-        ideas: json
+      .then(response => response.json())
+      .then(json => {
+        this.setState({
+          ideas: json
+        })
       })
-    })
   }
-  
+
+  updateClaimedOnMainPage = () => {
+    fetch(`${config.API_BASE_URL}`)
+      .then(response => response.json())
+      .then(json => {
+        this.setState({
+          ideas: json
+        })
+      })
+  }
+
   render() {
     return (
       <div>
-        <FormContext.Provider value={{ ideas: this.state.ideas}}>
+        <FormContext.Provider value={{ ideas: this.state.ideas }}>
           <BrowserRouter>
             <Switch>
-              <Route path="/" exact 
-              render={props => (
-              <UserPage updateClaimedOnMainPage={this.updateClaimedOnMainPage} {...props}/>
-              )} />
+              <Route path="/" exact
+                render={props => (
+                  <UserPage updateClaimedOnMainPage={this.updateClaimedOnMainPage} {...props} />
+                )} />
               <Route
                 path="/idea/:id"
                 render={props => <IdeaDetails updateClaimedOnMainPage={this.updateClaimedOnMainPage} {...props} />}
