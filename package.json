@@ -7,7 +7,7 @@
     "react-dom": "^16.10.2",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^5.0.1",
     "uuid": "^3.3.3"
   },
   "scripts": {
@@ -33,6 +33,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "homepage":"https://jiles-marketplace-of-ideas.now.sh/"
+    "homepage": "https://jiles-marketplace-of-ideas.now.sh/"
   }
 }
