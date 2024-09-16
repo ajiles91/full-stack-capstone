@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import UserPage from "./UserPage/UserPage";
 import CreateIdea from "./CreateIdea/CreateIdea";
 import IdeaDetails from "./IdeaDetails/IdeaDetails";
